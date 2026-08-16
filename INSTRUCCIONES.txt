@@ -1,0 +1,250 @@
+## PASO 0 — Instalación del Taste Skill 
+
+```bash
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
+```
+
+Esto instala la v2 (experimental, recomendada) del skill `design-taste-frontend` en el proyecto
+
+---
+
+## PROMPT 
+```
+Vas a construir el sitio web completo de mi startup. Sigue AL PIE DE LA LETRA
+las reglas del skill `design-taste-frontend` (Taste Skill) que ya está
+instalado en este proyecto — en particular:
+
+- §0 Brief inference: antes de generar nada, procesa todo el brief que te doy
+  abajo (industria, audiencia, tono, profundidad de animación, familia de
+  layout) y decide la dirección de diseño en consecuencia.
+- §2 Brief-to-design-system map: elige el sistema de diseño más adecuado
+  (te sugiero shadcn/ui + Tailwind, dado que busco algo premium/técnico y no
+  quiero reinventar componentes desde cero, pero decide tú si otro encaja
+  mejor con el brief).
+- §8 Dark mode protocol: implementa modo claro y oscuro desde el inicio, con
+  paridad real de contraste y jerarquía visual en ambos, no solo una
+  inversión de colores.
+- §11 Redesign protocol: no aplica ahora (proyecto nuevo), pero deja el
+  código organizado en un "block library" reutilizable para que en el futuro
+  pueda pedirte rediseños parciales sin romper todo.
+- §12 Block library schema: cada sección del sitio (hero, features, pricing,
+  etc.) debe ser un componente aislado y reutilizable, no un bloque de JSX
+  monolítico en una sola página.
+- §14 Hard pre-flight check: antes de darme el resultado final, verifica
+  honestamente cada checkbox del skill (responsive, contraste, sin
+  placeholders rotos, sin estados a medio hacer, etc.) y corrige lo que
+  falle antes de entregar.
+
+No me entregues nada "genérico de agencia" ni plantillas que se vean a
+plantilla — ese es justo el problema que este skill existe para resolver.
+
+═══════════════════════════════════════
+BRIEF DEL NEGOCIO
+═══════════════════════════════════════
+
+Es el sitio de una startup con tres líneas de negocio:
+1. SaaS propios (productos ya construidos, con sitios propios externos)
+2. Consultoría técnica (DevOps, cloud, automatización)
+3. Desarrollo de software a la medida / on demand (MVPs, integraciones,
+   migraciones)
+
+Tono deseado: profesional, técnico, "prolijo y puntero" — no corporativo
+aburrido, pero tampoco excéntrico. Debe transmitir credibilidad técnica
+(el público incluye tomadores de decisión técnicos, no solo negocio).
+
+Usa "[NOMBRE_EMPRESA]" como placeholder de texto en todo el sitio
+(logo/wordmark, footer, meta tags, copyright) — lo reemplazaré yo después.
+
+Usa placeholders de imagen en TODOS los lugares donde normalmente iría una
+foto/screenshot real (hero, casos de éxito, equipo, logos de clientes,
+screenshots de producto). Usa un patrón consistente y fácil de encontrar
+con buscar-y-reemplazar, por ejemplo:
+`<img src="/placeholders/hero-image.jpg" alt="[PLACEHOLDER: imagen hero — mockup del producto]" />`
+Cada placeholder debe llevar en el `alt` una descripción clara de qué
+imagen va ahí, para que yo sepa exactamente qué producir/subir después.
+
+═══════════════════════════════════════
+ARQUITECTURA DE PÁGINAS
+═══════════════════════════════════════
+
+1. **Home (/)**
+   - Navbar fijo (ver sección de navegación abajo)
+   - Hero: headline + subheadline con la propuesta de valor (NO "somos una
+     startup de software", sino qué problema resuelves), dos CTAs
+     (primario: "Ver productos" / secundario: "Hablemos de tu proyecto"),
+     imagen o mockup de producto como placeholder
+   - Franja de logos de clientes (placeholders, grayscale con hover a color)
+   - Sección "Bifurcación": 3 tarjetas grandes — Nuestros Productos /
+     Consultoría / Desarrollo a Medida — cada una con ícono, 2 líneas de
+     descripción y link a su página
+   - Sección "Nuestros SaaS" (preview): franja con 2 logos (Vetcore y
+     Gymcore) clickeables, cada uno abriendo en nueva pestaña a su propio
+     sitio (usa "#" como placeholder de URL), con nombre y one-liner debajo
+     de cada logo
+   - Sección "Cómo trabajamos": proceso en 3-4 pasos con numeración visual,
+     iconos o mini-ilustraciones
+   - Sección de métricas/resultados (placeholders numéricos tipo
+     "+X horas ahorradas", "X clientes")
+   - Testimonios (carrusel o grid, 2-3 placeholders de texto + avatar)
+   - CTA final full-width con fondo contrastante
+   - Footer completo (ver sección de footer)
+
+2. **/productos** (hub de SaaS)
+   - Header de sección explicando que son SaaS propios desarrollados
+     in-house (refuerza expertise técnico)
+   - Tarjeta grande para Vetcore: logo, nombre, one-liner ("sistema de
+     gestión para clínicas veterinarias"), 3 features destacadas en
+     bullets, screenshot placeholder, botón "Visitar Vetcore →" (abre en
+     nueva pestaña, URL placeholder)
+   - Tarjeta grande para Gymcore: mismo formato, contenido placeholder
+   - Diseño pensado para escalar si se agregan más productos después
+
+3. **/servicios** (hub, o dos sub-secciones ancladas)
+   - **Consultoría**: áreas de expertise (con iconos), metodología de
+     trabajo en pasos, mini caso de estudio placeholder con métrica
+   - **Desarrollo a medida**: tipos de proyecto que se toman, stack
+     tecnológico (badges/pills), modelos de compromiso (retainer / por
+     proyecto), portafolio placeholder (3 tarjetas de proyecto)
+   - Diferenciación visual clara entre ambas para que no se confundan
+
+4. **/casos-de-exito**
+   - Grid de 4-6 tarjetas de caso, cada una con: logo cliente placeholder,
+     industria, resultado clave (métrica grande y llamativa), link a
+     detalle (puede ser modal o página propia, tú decides según el skill)
+
+5. **/nosotros**
+   - Historia/misión (placeholder de texto), timeline opcional, sección de
+     equipo (grid de tarjetas con foto placeholder, nombre placeholder,
+     rol)
+
+6. **/precios**
+   - Tabla comparativa de 3 planes (placeholder), toggle mensual/anual,
+     FAQ corto debajo
+
+7. **/blog** (listado) y **/blog/[slug]** (detalle) — estructura básica,
+   con 3 posts placeholder en el listado
+
+8. **/contacto**
+   - DOS formularios distintos, alternables con tabs o toggle:
+     a) "Quiero una demo de un SaaS" (selector de producto: Vetcore/Gymcore)
+     b) "Quiero cotizar un proyecto / consultoría" (campos: tipo de
+        proyecto, presupuesto estimado, descripción)
+   - Widget/botón de "agendar llamada" (placeholder de embed tipo Calendly)
+   - Información de contacto directo (email, redes) como placeholder
+
+9. **/404** — página de error cuidada, con personalidad, no la default del
+   framework
+
+═══════════════════════════════════════
+NAVEGACIÓN
+═══════════════════════════════════════
+
+- Navbar sticky con blur/glassmorphism sutil al hacer scroll (transición
+  suave de fondo transparente a fondo sólido con blur)
+- Estructura: Logo (izq) — Nuestros Productos | Servicios | Casos de Éxito |
+  Nosotros | Precios — CTA "Hablemos" (der, botón destacado)
+- "Nuestros Productos" y "Servicios" con dropdown/mega-menú al hover
+  (desktop) que muestra sub-items con mini-descripción e ícono
+- Menú móvil: overlay full-screen con animación de entrada (stagger en los
+  links), no un dropdown comprimido
+- Indicador de sección activa (underline animado o cambio de color)
+- Toggle de modo claro/oscuro visible en el navbar (icono sol/luna con
+  transición animada al cambiar)
+
+═══════════════════════════════════════
+FOOTER
+═══════════════════════════════════════
+
+- 4 columnas: Logo+tagline+redes / Productos (links a Vetcore, Gymcore) /
+  Servicios (links a consultoría, desarrollo) / Empresa (nosotros, blog,
+  contacto)
+- Newsletter signup inline (placeholder, sin backend funcional por ahora)
+- Línea inferior: copyright con "[NOMBRE_EMPRESA]", año dinámico, links a
+  términos/privacidad
+
+═══════════════════════════════════════
+SISTEMA DE DISEÑO / ESTILOS
+═══════════════════════════════════════
+
+- Tipografía: una sans-serif técnica/moderna para UI (ej. Inter, Geist) +
+  opcionalmente una segunda fuente con más carácter para headlines grandes
+  — decide tú según el brief, evita Arial/system-ui genérico
+- Paleta: define una paleta con un color primario de marca + neutros bien
+  calibrados para ambos modos (claro/oscuro), no solo blanco/negro plano.
+  Incluye al menos un color de acento para CTAs y estados de éxito/alerta
+- Espaciado: usa una escala de espaciado consistente (no valores random),
+  con generoso whitespace — el brief pide "prolijo", no denso
+- Bordes/radios: define un radio de esquina consistente en todo el sitio
+  (ni completamente cuadrado ni excesivamente redondeado, salvo que el
+  brief inference indique lo contrario)
+- Sombras: sistema de elevación sutil y consistente, no sombras default de
+  Tailwind sin ajustar
+
+═══════════════════════════════════════
+COMPONENTES REUTILIZABLES (block library)
+═══════════════════════════════════════
+
+Construye cada uno como componente aislado:
+- Navbar (con estado de scroll y modo dropdown)
+- Footer
+- Botón (variantes: primario, secundario, ghost, con estado hover/active/
+  disabled)
+- Tarjeta de producto (usada en /productos y en el preview del home)
+- Tarjeta de servicio
+- Tarjeta de caso de éxito
+- Tarjeta de testimonio
+- Badge/pill (para stack tecnológico)
+- Toggle de tema claro/oscuro
+- Formulario de contacto (con validación básica de campos)
+- Sección CTA reutilizable (full-width, distintos fondos)
+- Componente de métrica animada (contador que sube al entrar en viewport)
+
+═══════════════════════════════════════
+EFECTOS Y MICRO-INTERACCIONES
+═══════════════════════════════════════
+
+- Animaciones de entrada al hacer scroll (fade + slight translate-y) en
+  cada sección, con stagger en grids de tarjetas — sutiles, no exageradas
+- Hover states con transición suave en tarjetas (leve elevación + escala
+  mínima, nunca saltos bruscos)
+- Contador animado en la sección de métricas (cuenta desde 0 al entrar en
+  viewport)
+- Cursor/hover interactivo en los logos de Vetcore/Gymcore (leve
+  glow o escala al pasar el mouse, indicando que son clickeables/externos)
+- Transición suave entre modo claro/oscuro (no un cambio abrupto de color)
+- Loading states cuidados para el formulario de contacto (spinner o skeleton,
+  no un simple "cargando...")
+- Scroll suave (smooth scroll) para links de ancla internos
+- Nada de animaciones que dificulten la legibilidad o que se disparen de
+  forma repetitiva/molesta al hacer scroll hacia arriba y abajo
+
+═══════════════════════════════════════
+REQUISITOS TÉCNICOS
+═══════════════════════════════════════
+
+- Totalmente responsive (mobile-first), probado mentalmente en breakpoints
+  de mobile/tablet/desktop antes de entregar
+- Accesibilidad básica: contraste AA mínimo en ambos modos, atributos alt
+  en todos los placeholders de imagen, navegación por teclado funcional en
+  navbar y formularios
+- SEO básico: meta tags con "[NOMBRE_EMPRESA]" como placeholder, estructura
+  semántica de encabezados (un solo h1 por página)
+- Performance: imágenes con lazy loading, sin librerías pesadas
+  innecesarias
+
+═══════════════════════════════════════
+ANTES DE ENTREGAR
+═══════════════════════════════════════
+
+Corre el pre-flight check del skill (§14) explícitamente y dime, en tu
+respuesta final, qué verificaste y qué ajustaste como resultado — no
+asumas que pasa, compruébalo.
+```
+
+---
+
+### Notas rápidas antes de usarlo
+
+- Si tu proyecto ya tiene un framework decidido (Next.js, Vite+React, etc.), agrega una línea al inicio del brief aclarándolo — si no, deja que el skill/Claude Code lo decida.
+- Reemplaza `[NOMBRE_EMPRESA]` y los placeholders de imagen al final, con un buscar-y-reemplazar global.
+- Si quieres una dirección visual específica (ej. "minimalista" vs "más editorial"), puedes agregar una línea citando uno de los estilos del skill: `minimalist-skill` o `soft-skill` suelen encajar bien con el tono "prolijo y puntero" que buscas.

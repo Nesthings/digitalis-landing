@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <defs>
+    <linearGradient id="A5" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#1D4ED8"/>
+    <stop offset="100%" stop-color="#1E40AF"/>
+  </linearGradient>
+    <radialGradient id="A5s" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="160" height="160" fill="url(#A5)"/>
+  <rect width="160" height="160" fill="url(#A5s)"/>
+  <rect width="160" height="160" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="2"/>
+  <text x="80" y="80" text-anchor="middle" dominant-baseline="central" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="52" font-weight="600" fill="#FFFFFF">JR</text>
+</svg>

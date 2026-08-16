@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080">
+  <defs>
+    <linearGradient id="G1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#101828"/>
+    <stop offset="100%" stop-color="#1D2B4A"/>
+  </linearGradient>
+    <linearGradient id="P1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="100%" stop-color="#E5E9F0"/>
+  </linearGradient>
+    <pattern id="P1g" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#263044" stroke-opacity="0.35" stroke-width="1"/>
+  </pattern>
+    <radialGradient id="R1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2E5BFF" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#2E5BFF" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#2E5BFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="1080" fill="url(#G1)"/>
+  <rect width="1440" height="1080" fill="url(#P1g)" opacity="0.5"/>
+  <circle cx="893" cy="454" r="324" fill="url(#R1)"/>
+  <circle cx="893" cy="454" r="178" fill="none" stroke="#2E5BFF" stroke-opacity="0.6" stroke-width="1.5"/>
+  <circle cx="893" cy="454" r="97" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1"/>
+  <g fill="#FFFFFF">
+    <rect x="875" y="436" width="10" height="10" rx="2" opacity="0.9"/>
+    <rect x="901" y="444" width="6" height="6" rx="1.5" opacity="0.6"/>
+    <rect x="887" y="464" width="8" height="8" rx="2" opacity="0.45"/>
+    <circle cx="909" cy="472" r="3" opacity="0.5"/>
+  </g>
+  <path d="M0 928.8 C 288 842.4, 648 1026, 1440 864 L1440 1080 L0 1080 Z" fill="#FFFFFF" fill-opacity="0.06"/>
+  <g stroke="#2E5BFF" stroke-opacity="0.35" stroke-width="1.5">
+    <path d="M0 324 Q 432 162, 792.0000000000001 378 T 1440 270"/>
+    <path d="M0 669.6 Q 360 518.4, 720 712.8000000000001 T 1440 604.8000000000001"/>
+  </g>
+  <circle cx="D1" cy="D1" r="0" fill="none"/>
+</svg>
