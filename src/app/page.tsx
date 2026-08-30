@@ -1,5 +1,4 @@
 import { Hero } from "@/components/hero";
-import { LogoWall } from "@/components/logo-wall";
 import { Bifurcacion } from "@/components/bifurcacion";
 import { SaasPreview } from "@/components/saas-preview";
 import { HowWeWork } from "@/components/how-we-work";
@@ -11,7 +10,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LogoWall />
+      {/* Sección "Empresas que confían en nuestro trabajo" desactivada.
+          Para reactivarla, descomentar el import de LogoWall y su uso. */}
+      {/* <LogoWall /> */}
       <Bifurcacion />
       <SaasPreview />
       <HowWeWork />

@@ -23,7 +23,7 @@ export function Hero() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-bg/70 px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] text-fg-secondary backdrop-blur">
-                Estudio de ingeniería de software
+                Ingeniería de software
               </span>
             </motion.div>
 
@@ -33,7 +33,9 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight text-fg text-balance sm:text-5xl lg:text-6xl"
             >
-              Software que escala con tu operación, no al revés.
+              Cree en tus <span className="text-accent">ideas</span>,
+              <br />
+              nosotros las <span className="text-accent">desarrollamos</span>.
             </motion.h1>
 
             <motion.p
@@ -42,9 +44,11 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
               className="mt-6 max-w-xl text-lg leading-relaxed text-fg-secondary text-pretty"
             >
-              SaaS propios, consultoría técnica y desarrollo a medida. Automatizamos
-              procesos, modernizamos infraestructura y lanzamos software confiable.
+ 
+              Mejoramos procesos automatizando tareas repetitivas, optimizando flujos de trabajo,
+              modernizando infraestructura y haciendo de tu software un producto confiable.
             </motion.p>
+            
 
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 24 }}
@@ -74,14 +78,17 @@ export function Hero() {
             className="relative"
           >
             <div className="overflow-hidden rounded-[1.5rem] border border-border shadow-elevation-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/placeholders/hero-image.svg"
-                alt="[PLACEHOLDER: imagen hero - mockup del producto principal]"
-                className="h-full w-full object-cover"
-                width={1440}
-                height={1080}
-              />
+              <video
+                className="aspect-video h-full w-full scale-[1.3] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="[PLACEHOLDER: animación del producto principal]"
+              >
+                <source src="/videos/graphic-1.mp4" type="video/mp4" />
+                <source src="/videos/graphic-1.webm" type="video/webm" />
+              </video>
             </div>
           </motion.div>
         </div>

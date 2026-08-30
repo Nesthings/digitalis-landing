@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/reveal";
 export const metadata: Metadata = {
   title: "Productos",
   description:
-    "SaaS propios desarrollados in-house por Digitalis Labs: Vetcore para clínicas veterinarias y Gymcore para gimnasios.",
+    "Software desarrollados in-house por Digitalis Labs: VetCore, gestión de clínicas veterinarias y GymCore para gestión d gimnasios.",
 };
 
 interface ProductCardProps {

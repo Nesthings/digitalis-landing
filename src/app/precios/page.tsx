@@ -18,7 +18,7 @@ const plans = [
       "Sesiones mensuales de arquitectura",
       "Revisión de código e infraestructura",
       "Acceso a asesoría por chat",
-      "Cancelá cuando quieras",
+      "Cancela cuando quieras",
     ],
     cta: "Elegir Mentoría",
     featured: false,
@@ -82,7 +82,7 @@ export default function PreciosPage() {
       <PageHeader
         eyebrow="Precios"
         title="Planes claros, sin letra chica"
-        description="Elegí el modelo que mejor encaje con tu etapa. Todos empiezan con una conversación para entender tu problema real."
+        description="Elige el modelo que mejor encaje con tu etapa. Todos empiezan con una conversación para entender tu problema real."
       />
 
       <Container className="py-16 md:py-20">

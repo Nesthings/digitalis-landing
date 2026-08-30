@@ -15,7 +15,7 @@ export default function NotFound() {
         Esta página no existe (todavía)
       </h1>
       <p className="mt-4 max-w-md text-base leading-relaxed text-fg-secondary">
-        Puede que se haya movido o que la URL esté escrita mal. Volvé al inicio o contanos qué
+        Puede que se haya movido o que la URL esté escrita mal. Vuelve al inicio o cuéntanos qué
         buscabas.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">

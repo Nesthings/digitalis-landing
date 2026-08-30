@@ -1,4 +1,4 @@
-import { Check, Code, Flask, GearSix, GitMerge } from "@phosphor-icons/react/dist/ssr";
+import { Check, ClipboardText, Code, Flask, GearSix, GitMerge } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Consultoría técnica (DevOps, cloud, automatización) y desarrollo de software a medida: MVPs, integraciones y migraciones por Digitalis Labs.",
+    "Consultoría técnica (DevOps, cloud, automatización), desarrollo de software a medida: MVPs, integraciones y migraciones, gestionamos tu proyecto de software de principio a fin.",
 };
 
 const consultingAreas = [
@@ -91,9 +91,75 @@ export default function ServiciosPage() {
     <>
       <PageHeader
         eyebrow="Servicios"
-        title="Consultoría técnica y desarrollo a medida"
-        description="Dos formas de trabajar con nosotros, con una misma premisa: entender tu problema y resolverlo con la tecnología adecuada."
+        title="Gestionamos tu proyecto, lo desarrollamos y lo llevamos a producción"
+        description="Tres formas de trabajar con nosotros, con una misma premisa: entender tu problema y resolverlo con la tecnología adecuada, de principio a fin."
       />
+
+      {/* Gestión de proyecto */}
+      <section id="gestion" className="scroll-mt-24 py-16 md:py-24">
+        <Container>
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-fg md:text-3xl">
+                Gestionamos tu proyecto
+              </h2>
+              <p className="mt-3 text-lg text-fg-secondary text-pretty">
+                Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación,
+                equipo, desarrollo, despliegue y operación. Tú te ocupas del negocio, nosotros
+                del resto.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: ClipboardText, title: "Definición y alcance", description: "Transformamos tu idea en un plan claro con objetivos, entregables y plazos realistas." },
+              { icon: GearSix, title: "Planificación", description: "Armamos el equipo, el cronograma y el stack. Todo documentado, todo transparente." },
+              { icon: Code, title: "Ejecución", description: "Desarrollamos en iteraciones cortas con revisiones frecuentes. Siempre sabes cómo va todo." },
+              { icon: Flask, title: "Deploy y operación", description: "Lo llevamos a producción, monitoreamos y acompañamos hasta que el sistema es estable." },
+            ].map((s, i) => (
+              <Reveal key={s.title} delay={i * 0.07} className="h-full">
+                <div className="h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:bg-bg hover:shadow-elevation-2">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                    <s.icon size={20} weight="duotone" />
+                  </span>
+                  <h3 className="mt-4 text-base font-semibold text-fg">{s.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-fg-secondary">
+                    {s.description}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mt-14">
+            <div className="rounded-3xl border border-accent bg-accent p-6 sm:p-8 lg:p-10">
+              <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-lg font-semibold text-accent-contrast">
+                    Un solo responsable, de principio a fin
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-accent-contrast/85">
+                    Nada de pasar el problema de un proveedor a otro. Gestionamos el proyecto
+                    completo: tú hablas con una sola persona, que responde por el resultado.
+                    Con reportes periódicos, presupuesto claro y entregas verificables.
+                  </p>
+                </div>
+                <ul className="space-y-2.5">
+                  {["Reportes de avance periódicos", "Presupuesto claro desde el inicio", "Un único responsable de resultado"].map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-accent-contrast">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-contrast/20">
+                        <Check size={12} weight="bold" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
 
       {/* Consultoría */}
       <section id="consultoria" className="scroll-mt-24 py-16 md:py-24">

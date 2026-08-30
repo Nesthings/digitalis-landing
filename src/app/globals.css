@@ -80,6 +80,7 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
+    overflow-x: hidden;
   }
 
   html.dark {
@@ -92,6 +93,7 @@
     font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   ::selection {

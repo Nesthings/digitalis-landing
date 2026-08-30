@@ -16,7 +16,7 @@ export const posts: BlogPost[] = [
     slug: "devops-para-equipos-chicos",
     title: "DevOps para equipos chicos: por dónde empezar sin morir en el intento",
     excerpt:
-      "No necesitás un departamento de plataforma para tener buenos deploys. Estas son las prácticas mínimas que valen la pena desde el día uno.",
+      "No necesitas un departamento de plataforma para tener buenos deploys. Estas son las prácticas mínimas que valen la pena desde el día uno.",
     date: "2025-06-18",
     category: "DevOps",
     readTime: "6 min",
@@ -26,7 +26,7 @@ export const posts: BlogPost[] = [
     content: [
       "Cuando un equipo chico escucha la palabra DevOps, suele imaginarse una plataforma entera con decenas de herramientas. La realidad es mucho más simple: DevOps es la disciplina de llevar código a producción de forma confiable y repetible.",
       "Lo primero que recomendamos es automatizar el deploy. Si hoy tu equipo sube cambios a mano, empezar por ahí te va a dar el retorno más rápido: menos errores humanos, más frecuencia y menos miedo a romper.",
-      "Después, agregá tests en el pipeline que frenen un deploy cuando algo está mal. No hace falta cobertura perfecta, hace falta que las pruebas protejan las rutas críticas de tu negocio.",
+      "Después, agrega tests en el pipeline que frenen un deploy cuando algo está mal. No hace falta cobertura perfecta, hace falta que las pruebas protejan las rutas críticas de tu negocio.",
       "Por último, medí. Métricas simples de uptime, tiempo de deploy y tasa de error te dicen más que cualquier herramienta de moda. El objetivo no es verse moderno, es dormir tranquilo.",
     ],
   },
@@ -45,7 +45,7 @@ export const posts: BlogPost[] = [
       "El error más común al planificar un MVP es confundir 'poco trabajo' con 'recorte de calidad'. Un MVP bien hecho es la versión mínima de un producto que resuelve un problema real de punta a punta.",
       "La clave está en el alcance: elegir una sola promesa principal y resistir la tentación de agregar features que nadie pidió. Cada pantalla extra que se suma multiplica el riesgo de no llegar a la fecha.",
       "En nuestro proceso dividimos las 12 semanas en tres bloques: descubrimiento y arquitectura, construcción del core, y pulido con feedback de usuarios reales. El deploy empieza en la semana cuatro, no al final.",
-      "Si estás por arrancar un MVP, te dejamos la pregunta que más nos funciona: ¿qué es lo mínimo que tiene que hacer el producto para que alguien quiera pagar por él? Respondé eso y el resto se ordena solo.",
+      "Si estás por arrancar un MVP, te dejamos la pregunta que más nos funciona: ¿qué es lo mínimo que tiene que hacer el producto para que alguien quiera pagar por él? Responde eso y el resto se ordena solo.",
     ],
   },
   {
@@ -60,7 +60,7 @@ export const posts: BlogPost[] = [
     src: "/placeholders/blog-3.svg",
     alt: "[PLACEHOLDER: portada del artículo sobre deuda técnica]",
     content: [
-      "Decimos que hay deuda técnica intencional cuando tomás un atajo sabiendo exactamente qué estás postergando y cuándo lo vas a pagar. Ese es un trade-off legítimo: a veces conviene entregar antes.",
+      "Decimos que hay deuda técnica intencional cuando tomas un atajo sabiendo exactamente qué estás postergando y cuándo lo vas a pagar. Ese es un trade-off legítimo: a veces conviene entregar antes.",
       "La deuda que te persigue es la que se acumula sin registro. Nadie documentó el atajo, nadie sabe qué hay que pagar, y con el tiempo cada feature nueva cuesta más que la anterior.",
       "La práctica que más ayuda es llevar un registro simple de deuda: qué se postergó, por qué, y cuándo se va a resolver. No hace falta una herramienta, alcanza con que esté escrito.",
       "Al final, la deuda técnica no es un problema de código, es un problema de comunicación. Los equipos que la manejan bien son los que hablan de ella con naturalidad.",

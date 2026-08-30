@@ -50,11 +50,11 @@ export default function ContactoPage() {
     const next: Record<string, string> = {};
     const email = String(form.get("email") ?? "");
     const name = String(form.get("name") ?? "");
-    if (!name.trim()) next.name = "Ingresá tu nombre.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Ingresá un email válido.";
-    if (kind === "demo" && !form.get("product")) next.product = "Elegí un producto.";
+    if (!name.trim()) next.name = "Ingresa tu nombre.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Ingresa un email válido.";
+    if (kind === "demo" && !form.get("product")) next.product = "Elige un producto.";
     if (kind === "cotizacion" && !form.get("projectType")) {
-      next.projectType = "Elegí el tipo de proyecto.";
+      next.projectType = "Elige el tipo de proyecto.";
     }
     return next;
   };
@@ -77,7 +77,7 @@ export default function ContactoPage() {
     <>
       <PageHeader
         eyebrow="Contacto"
-        title="Cuentanos qué necesitas"
+        title="Cuéntanos qué necesitas"
         description="Ya sea una demo de un producto o la cotización de un proyecto, la primera conversación siempre es gratis y sin compromiso."
       />
 
@@ -153,13 +153,13 @@ export default function ContactoPage() {
                             <option value="gymcore">Gymcore - software para gimnasios</option>
                           </select>
                         </Field>
-                        <Field label="¿Qué querés ver en la demo?" htmlFor="message">
+                        <Field label="¿Qué quieres ver en la demo?" htmlFor="message">
                           <textarea
                             id="message"
                             name="message"
                             rows={4}
                             className="w-full rounded-xl border border-border-strong bg-bg px-3.5 py-3 text-sm text-fg placeholder:text-fg-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent"
-                            placeholder="Contanos brevemente sobre tu clínica o gimnasio"
+                            placeholder="Cuéntanos brevemente sobre tu clínica o gimnasio"
                           />
                         </Field>
                       </>
@@ -196,7 +196,7 @@ export default function ContactoPage() {
                             name="description"
                             rows={4}
                             className="w-full rounded-xl border border-border-strong bg-bg px-3.5 py-3 text-sm text-fg placeholder:text-fg-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent"
-                            placeholder="Contanos qué necesitás construir, integrar o mejorar"
+                            placeholder="Cuéntanos qué necesitas construir, integrar o mejorar"
                           />
                         </Field>
                       </>

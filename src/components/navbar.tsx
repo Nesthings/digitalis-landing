@@ -32,6 +32,11 @@ const navItems = [
     href: "/servicios",
     children: [
       {
+        title: "Gestionamos tu proyecto",
+        href: "/servicios#gestion",
+        description: "De principio a fin, sin que tengas que preocuparte",
+      },
+      {
         title: "Consultoría técnica",
         href: "/servicios#consultoria",
         description: "DevOps, cloud y automatización",

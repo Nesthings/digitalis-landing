@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 
 export function CtaSection({
-  title = "¿Tenés un proyecto en mente?",
-  description = "Contanos qué necesitás construir o mejorar. Te respondemos con un plan claro, sin vueltas.",
+  title = "¿Tienes un proyecto en mente?",
+  description = "Cuéntanos qué necesitas construir o mejorar. Te respondemos con un plan claro, sin vueltas.",
   link = "/contacto",
   linkLabel = "Hablemos de tu proyecto",
 }: {
