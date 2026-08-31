@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 import { VetcoreLogo } from "@/components/vetcore-logo";
+import { GymcoreLogo } from "@/components/gymcore-logo";
 
 export const metadata: Metadata = {
   title: "Productos",
@@ -35,6 +36,8 @@ function ProductCard({ id, name, oneLiner, features, src, alt, href, ctaLabel }:
             <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-accent">
               {name === "Vetcore" ? (
                 <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+              ) : name === "Gymcore" ? (
+                <GymcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
               ) : (
                 <span className="font-mono text-lg font-bold text-accent-contrast">{name.slice(0, 1)}</span>
               )}

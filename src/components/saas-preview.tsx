@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
 import { VetcoreLogo } from "@/components/vetcore-logo";
+import { GymcoreLogo } from "@/components/gymcore-logo";
 
 const products = [
   {
@@ -29,6 +30,7 @@ const products = [
     tone: "electric",
     bg: "/placeholders/product-gymcore.svg",
     aspect: "4/3",
+    logo: true,
   },
 ] as const;
 
@@ -66,7 +68,11 @@ export function SaasPreview() {
                     <div className="flex items-center gap-4">
                       <GlassIcon>
                         {product.logo ? (
-                          <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          product.name === "Vetcore" ? (
+                            <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          ) : (
+                            <GymcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          )
                         ) : (
                           <span className="font-mono text-lg font-bold">
                             {product.name.slice(0, 1)}

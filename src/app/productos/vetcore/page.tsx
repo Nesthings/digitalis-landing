@@ -154,7 +154,7 @@ export default function VetcorePage() {
         tone="clinical"
         bg="/placeholders/product-vetcore.svg"
         srcVideo="/placeholders/vetcore-demo.webm"
-        logo
+        logo="vetcore"
       />
 
       {/* Hero de producto */}

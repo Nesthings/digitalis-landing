@@ -2,10 +2,10 @@
 
 import { ArrowRight, Check } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { GlassCard } from "@/components/ui/glass-card";
 
 interface Plan {
   name: string;
@@ -100,82 +100,98 @@ export default function PreciosPage() {
         <div className="mt-4 grid gap-6 lg:grid-cols-3">
           {plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 0.08} className="h-full">
-              <div
-                className={cn(
-                  "relative flex h-full flex-col rounded-3xl border p-7 transition-all duration-300",
-                  plan.featured
-                    ? "border-accent bg-accent text-accent-contrast shadow-elevation-3 lg:-mt-4 lg:-mb-4"
-                    : "border-border bg-bg-muted hover:shadow-elevation-2",
-                )}
-              >
-                {plan.badge && (
-                  <span className="absolute -top-3 left-7 rounded-full bg-accent-contrast px-3 py-1 text-xs font-semibold text-accent">
-                    {plan.badge}
-                  </span>
-                )}
-                <h2 className="text-lg font-semibold">{plan.name}</h2>
-                <p
-                  className={cn(
-                    "mt-2 text-sm leading-relaxed",
-                    plan.featured ? "text-accent-contrast/75" : "text-fg-secondary",
+              {plan.featured ? (
+                <div className="relative h-full lg:-mt-4 lg:-mb-4">
+                  {plan.badge && (
+                    <span className="absolute -top-3 left-7 z-10 rounded-full bg-white px-3 py-1 text-xs font-semibold text-brand-600 shadow-elevation-1">
+                      {plan.badge}
+                    </span>
                   )}
-                >
-                  {plan.description}
-                </p>
-                <div className="mt-6">
-                  <span className="font-mono text-3xl font-semibold tracking-tight md:text-4xl">
-                    {plan.price}
-                  </span>
-                  <span
-                    className={cn(
-                      "ml-1.5 text-sm",
-                      plan.featured ? "text-accent-contrast/75" : "text-fg-muted",
-                    )}
-                  >
-                    {plan.period}
-                  </span>
-                </div>
-                <ul className="mt-6 flex-1 space-y-3 border-t border-border pt-6">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm">
-                      <span
-                        className={cn(
-                          "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full",
-                          plan.featured ? "bg-accent-contrast/20 text-accent-contrast" : "bg-accent/10 text-accent",
-                        )}
-                      >
-                        <Check size={12} weight="bold" />
+                  <GlassCard src="/placeholders/hero-image.svg" tone="blue">
+                    <div className="flex h-full flex-1 flex-col p-7 pt-9">
+                    <h2 className="text-lg font-semibold text-white">{plan.name}</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-white/75">
+                      {plan.description}
+                    </p>
+                    <div className="mt-6">
+                      <span className="font-mono text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                        {plan.price}
                       </span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8 flex flex-col gap-2.5">
-                  <a
-                    href="/contacto"
-                    className={cn(
-                      "inline-flex h-11 items-center justify-center rounded-full text-sm font-medium transition-all duration-200 active:translate-y-px",
-                      plan.featured
-                        ? "bg-accent-contrast text-accent hover:shadow-elevation-2"
-                        : "border border-border-strong bg-bg text-fg hover:bg-bg-subtle",
-                    )}
-                  >
-                    {plan.cta}
-                  </a>
-                  <Link
-                    href={plan.href}
-                    className={cn(
-                      "inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-200 active:translate-y-px",
-                      plan.featured
-                        ? "text-accent-contrast/85 hover:bg-accent-contrast/10 hover:text-accent-contrast"
-                        : "text-accent hover:bg-accent/10",
-                    )}
-                  >
-                    Ver detalle
-                    <ArrowRight size={14} weight="bold" />
-                  </Link>
+                      <span className="ml-1.5 text-sm text-white/75">
+                        {plan.period}
+                      </span>
+                    </div>
+                    <ul className="mt-6 flex-1 space-y-3 border-t border-white/20 pt-6">
+                      {plan.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2.5 text-sm text-white/90">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                            <Check size={12} weight="bold" />
+                          </span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex flex-col gap-2.5">
+                      <a
+                        href="/contacto"
+                        className="inline-flex h-11 items-center justify-center rounded-full bg-white text-sm font-medium text-brand-600 shadow-elevation-1 transition-all duration-200 hover:bg-white/90 hover:shadow-elevation-2 active:translate-y-px"
+                      >
+                        {plan.cta}
+                      </a>
+                      <Link
+                        href={plan.href}
+                        className="inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-medium text-white/85 transition-all duration-200 hover:bg-white/10 hover:text-white active:translate-y-px"
+                      >
+                        Ver detalle
+                        <ArrowRight size={14} weight="bold" />
+                      </Link>
+                    </div>
+                  </div>
+                  </GlassCard>
                 </div>
-              </div>
+              ) : (
+                <div
+                  className="relative flex h-full flex-col rounded-3xl border border-border bg-bg-muted p-7 transition-all duration-300 hover:shadow-elevation-2"
+                >
+                  <h2 className="text-lg font-semibold">{plan.name}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
+                    {plan.description}
+                  </p>
+                  <div className="mt-6">
+                    <span className="font-mono text-3xl font-semibold tracking-tight md:text-4xl">
+                      {plan.price}
+                    </span>
+                    <span className="ml-1.5 text-sm text-fg-muted">
+                      {plan.period}
+                    </span>
+                  </div>
+                  <ul className="mt-6 flex-1 space-y-3 border-t border-border pt-6">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                          <Check size={12} weight="bold" />
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 flex flex-col gap-2.5">
+                    <a
+                      href="/contacto"
+                      className="inline-flex h-11 items-center justify-center rounded-full border border-border-strong bg-bg text-sm font-medium text-fg transition-all duration-200 hover:bg-bg-subtle active:translate-y-px"
+                    >
+                      {plan.cta}
+                    </a>
+                    <Link
+                      href={plan.href}
+                      className="inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-medium text-accent transition-all duration-200 hover:bg-accent/10 active:translate-y-px"
+                    >
+                      Ver detalle
+                      <ArrowRight size={14} weight="bold" />
+                    </Link>
+                  </div>
+                </div>
+              )}
             </Reveal>
           ))}
         </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { GlassCard } from "@/components/ui/glass-card";
 
 export const metadata: Metadata = {
   title: "Casos de Éxito",
@@ -87,37 +88,28 @@ export default function CasosPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cases.map((c, i) => (
             <Reveal key={c.client} delay={(i % 3) * 0.07} className="h-full">
-              <Link
-                href="/contacto"
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-bg-muted transition-all duration-300 hover:-translate-y-1 hover:shadow-elevation-3"
-              >
-                <div className="overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={c.src}
-                    alt={c.alt}
-                    className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
+              <GlassCard src={c.src} tone="blue">
+                <Link
+                  href="/contacto"
+                  className="group flex h-full flex-1 flex-col p-6"
+                >
                   <div className="flex items-center justify-between gap-3">
-                    <h2 className="text-base font-semibold text-fg">{c.client}</h2>
-                    <span className="rounded-full border border-border px-2.5 py-0.5 text-xs text-fg-muted">
+                    <h2 className="text-base font-semibold text-white">{c.client}</h2>
+                    <span className="rounded-full border border-white/30 bg-white/15 px-2.5 py-0.5 text-xs text-white/80 backdrop-blur-lg">
                       {c.industry}
                     </span>
                   </div>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-fg-secondary">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-white/80">
                     {c.description}
                   </p>
-                  <div className="mt-5 flex items-end justify-between border-t border-border pt-5">
+                  <div className="mt-5 flex items-end justify-between border-t border-white/20 pt-5">
                     <div>
-                      <p className="font-mono text-3xl font-semibold tracking-tight text-accent">
+                      <p className="font-mono text-3xl font-semibold tracking-tight text-white">
                         {c.metric}
                       </p>
-                      <p className="text-xs text-fg-muted">{c.metricLabel}</p>
+                      <p className="text-xs text-white/70">{c.metricLabel}</p>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-fg transition-colors group-hover:text-accent">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-white">
                       Ver caso
                       <ArrowRight
                         size={14}
@@ -126,8 +118,8 @@ export default function CasosPage() {
                       />
                     </span>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </GlassCard>
             </Reveal>
           ))}
         </div>

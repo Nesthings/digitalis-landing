@@ -150,6 +150,7 @@ export default function GymcorePage() {
         alt="[PLACEHOLDER: screenshot del sistema Gymcore, gimnasios y estudios]"
         siteUrl="#"
         tone="electric"
+        logo="gymcore"
       />
 
       {/* Hero de producto */}

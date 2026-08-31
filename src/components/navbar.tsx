@@ -10,6 +10,7 @@ import { Container } from "@/components/ui/container";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Logo } from "@/components/logo";
 import { VetcoreLogo } from "@/components/vetcore-logo";
+import { GymcoreLogo } from "@/components/gymcore-logo";
 
 const navItems = [
   {
@@ -165,6 +166,8 @@ export function Navbar() {
                         <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-bg-muted text-accent">
                           {child.title === "Vetcore" ? (
                             <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          ) : child.title === "Gymcore" ? (
+                            <GymcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
                           ) : (
                             <ArrowSquareOut size={15} weight="bold" />
                           )}
@@ -268,6 +271,11 @@ export function Navbar() {
                         {child.title === "Vetcore" && (
                           <span className="relative block h-5 w-5 shrink-0 overflow-hidden rounded-md">
                             <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          </span>
+                        )}
+                        {child.title === "Gymcore" && (
+                          <span className="relative block h-5 w-5 shrink-0 overflow-hidden rounded-md">
+                            <GymcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
                           </span>
                         )}
                         {child.title}

@@ -2,39 +2,14 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { Timeline } from "@/components/timeline";
+import { GlassCard } from "@/components/ui/glass-card";
 
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
     "Historia, misión y equipo de Digitalis Labs, una startup de software con SaaS propios, consultoría técnica y desarrollo a medida.",
 };
-
-const timeline = [
-  {
-    year: "2019",
-    title: "El origen",
-    description:
-      "Nacimos como un equipo de consultoría DevOps con clientes en el país y en el exterior.",
-  },
-  {
-    year: "2021",
-    title: "Primer SaaS: Vetcore",
-    description:
-      "Lanzamos nuestro primer producto propio para clínicas veterinarias, hoy en producción.",
-  },
-  {
-    year: "2023",
-    title: "Gymcore y equipo propio",
-    description:
-      "Sumamos un segundo SaaS y consolidamos un equipo interno de producto y plataforma.",
-  },
-  {
-    year: "2025",
-    title: "Donde estamos hoy",
-    description:
-      "Tres líneas de negocio activas: SaaS, consultoría técnica y desarrollo a medida.",
-  },
-];
 
 const team = [
   {
@@ -95,20 +70,7 @@ export default function NosotrosPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <ol className="relative space-y-8 border-l border-border pl-6">
-                {timeline.map((t) => (
-                  <li key={t.year} className="relative">
-                    <span className="absolute -left-[29px] top-1 h-3 w-3 rounded-full border-2 border-accent bg-bg" />
-                    <span className="font-mono text-sm font-semibold text-accent">
-                      {t.year}
-                    </span>
-                    <h3 className="mt-1 text-base font-semibold text-fg">{t.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-fg-secondary">
-                      {t.description}
-                    </p>
-                  </li>
-                ))}
-              </ol>
+              <Timeline />
             </Reveal>
           </div>
         </Container>
@@ -131,17 +93,21 @@ export default function NosotrosPage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.07} className="h-full">
-                <div className="group rounded-2xl border border-border bg-bg p-4 transition-all duration-300 hover:shadow-elevation-2">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={member.src}
-                    alt={member.alt}
-                    className="aspect-square w-full rounded-xl object-cover"
-                    loading="lazy"
-                  />
-                  <h3 className="mt-4 text-base font-semibold text-fg">{member.name}</h3>
-                  <p className="mt-0.5 text-sm text-fg-muted">{member.role}</p>
-                </div>
+                <GlassCard src="/placeholders/hero-image.svg" tone="blue">
+                  <div className="group flex h-full flex-col p-4">
+                    <div className="overflow-hidden rounded-xl border border-white/20">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={member.src}
+                        alt={member.alt}
+                        className="aspect-square w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="mt-4 text-base font-semibold text-white">{member.name}</h3>
+                    <p className="mt-0.5 text-sm text-white/70">{member.role}</p>
+                  </div>
+                </GlassCard>
               </Reveal>
             ))}
           </div>

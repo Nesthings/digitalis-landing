@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { GlassCard } from "@/components/ui/glass-card";
 import { VetcoreLogo } from "@/components/vetcore-logo";
+import { GymcoreLogo } from "@/components/gymcore-logo";
 
 interface ProductHeroProps {
   name: string;
@@ -15,7 +16,7 @@ interface ProductHeroProps {
   tone?: "blue" | "clinical" | "electric";
   bg?: string;
   srcVideo?: string;
-  logo?: boolean;
+  logo?: "vetcore" | "gymcore";
 }
 
 export function ProductHero({ name, initial, oneLiner, features, src, alt, siteUrl, tone = "blue", bg = src, srcVideo, logo }: ProductHeroProps) {
@@ -27,7 +28,7 @@ export function ProductHero({ name, initial, oneLiner, features, src, alt, siteU
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-3">
                 <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white/40 bg-white/25 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-lg">
-                  {logo ? <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" /> : (
+                  {logo === "vetcore" ? <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" /> : logo === "gymcore" ? <GymcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" /> : (
                     <span className="font-mono text-lg font-bold text-white">{initial}</span>
                   )}
                 </span>
