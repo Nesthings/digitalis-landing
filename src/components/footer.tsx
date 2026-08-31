@@ -21,15 +21,17 @@ export function Footer() {
     {
       heading: "Productos",
       links: [
-        { label: "Vetcore", href: "/productos#vetcore" },
-        { label: "Gymcore", href: "/productos#gymcore" },
+        { label: "Vetcore", href: "/productos/vetcore" },
+        { label: "Gymcore", href: "/productos/gymcore" },
       ],
     },
     {
       heading: "Servicios",
       links: [
-        { label: "Consultoría técnica", href: "/servicios#consultoria" },
-        { label: "Desarrollo a medida", href: "/servicios#desarrollo" },
+        { label: "Gestión de proyectos", href: "/servicios/gestion" },
+        { label: "Consultoría técnica", href: "/servicios/consultoria" },
+        { label: "Desarrollo a medida", href: "/servicios/desarrollo" },
+        { label: "Ciberseguridad", href: "/servicios/ciberseguridad" },
       ],
     },
     {

@@ -4,12 +4,12 @@ import { AnimatedMetric } from "@/components/ui/animated-metric";
 
 const metrics = [
   {
-    value: 12000,
+    value: 8000,
     suffix: "+",
     label: "Horas de desarrollo entregadas",
   },
   {
-    value: 40,
+    value: 30,
     suffix: "+",
     label: "Proyectos llevados a producción",
   },

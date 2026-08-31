@@ -1,35 +1,51 @@
-import { ArrowRight, CloudCheck, SquaresFour, CodeIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRight,
+  ClipboardText,
+  CloudCheck,
+  CodeIcon,
+  ShieldCheckIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
 
 const items = [
   {
-    icon: SquaresFour,
-    title: "Nuestros Productos",
+    icon: ClipboardText,
+    title: "Gestión de Proyectos",
     description:
-      "SaaS propios que desarrollamos, operamos y mejoramos con lo que aprendemos de nuestros clientes.",
-    href: "/productos",
-    cta: "Explorar productos",
-    featured: true,
+      "Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación, ejecución y operación.",
+    href: "/servicios/gestion",
+    cta: "Ver gestión de proyectos",
+    bg: "/placeholders/product-vetcore.svg",
   },
   {
     icon: CloudCheck,
     title: "Consultoría",
     description:
       "DevOps, cloud y automatización. Acompañamos a tu equipo a modernizar infraestructura sin frenar el negocio.",
-    href: "/servicios#consultoria",
+    href: "/servicios/consultoria",
     cta: "Ver consultoría",
-    featured: false,
+    bg: "/placeholders/product-gymcore.svg",
   },
   {
     icon: CodeIcon,
     title: "Desarrollo a Medida",
     description:
       "MVPs, integraciones y migraciones. Construimos software que resuelve tu problema exacto, no otro.",
-    href: "/servicios#desarrollo",
+    href: "/servicios/desarrollo",
     cta: "Ver desarrollo a medida",
-    featured: false,
+    bg: "/placeholders/hero-image.svg",
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: "Consultoría de Ciberseguridad",
+    description:
+      "Auditorías, hardening y estrategia de seguridad para proteger tu infraestructura y tus datos.",
+    href: "/servicios/ciberseguridad",
+    cta: "Ver ciberseguridad",
+    bg: "/placeholders/cta-background.svg",
   },
 ];
 
@@ -37,65 +53,26 @@ export function Bifurcacion() {
   return (
     <section className="py-20 md:py-28">
       <Container>
-        <div className="grid gap-6 lg:grid-cols-2">
-          {items.map((item, i) => {
-            if (item.featured) {
-              return (
-                <Reveal key={item.title} delay={i * 0.08} className="h-full lg:row-span-2">
-                  <Link
-                    href={item.href}
-                    className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-accent p-8 transition-all duration-300 hover:shadow-elevation-3 sm:p-10"
-                  >
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 opacity-10"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(rgba(255,255,255,.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.7) 1px, transparent 1px)",
-                        backgroundSize: "40px 40px",
-                      }}
-                    />
-                    <div className="relative">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-contrast/15 text-accent-contrast transition-transform duration-300 group-hover:scale-105">
-                        <item.icon size={24} weight="duotone" />
-                      </span>
-                      <h3 className="mt-6 text-2xl font-semibold tracking-tight text-accent-contrast">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 max-w-sm text-sm leading-relaxed text-accent-contrast/85">
-                        {item.description}
-                      </p>
-                    </div>
-                    <span className="relative mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-accent-contrast">
-                      {item.cta}
-                      <ArrowRight
-                        size={14}
-                        weight="bold"
-                        className="transition-transform duration-200 group-hover:translate-x-1"
-                      />
-                    </span>
-                  </Link>
-                </Reveal>
-              );
-            }
-            return (
-              <Reveal key={item.title} delay={i * 0.08} className="h-full">
+        <div className="grid gap-6 sm:grid-cols-2">
+          {items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.08} className="h-full">
+              <GlassCard src={item.bg}>
                 <Link
                   href={item.href}
-                  className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-bg-muted p-7 transition-all duration-300 hover:-translate-y-1 hover:border-border-strong hover:bg-bg hover:shadow-elevation-2"
+                  className="group flex h-full flex-1 flex-col justify-between p-7"
                 >
                   <div>
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-bg text-accent transition-transform duration-300 group-hover:scale-105">
+                    <GlassIcon>
                       <item.icon size={22} weight="duotone" />
-                    </span>
-                    <h3 className="mt-5 text-xl font-semibold tracking-tight text-fg">
+                    </GlassIcon>
+                    <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
+                    <p className="mt-2 text-sm leading-relaxed text-white/80">
                       {item.description}
                     </p>
                   </div>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white">
                     {item.cta}
                     <ArrowRight
                       size={14}
@@ -104,9 +81,9 @@ export function Bifurcacion() {
                     />
                   </span>
                 </Link>
-              </Reveal>
-            );
-          })}
+              </GlassCard>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>

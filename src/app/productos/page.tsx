@@ -1,8 +1,10 @@
 import { ArrowSquareOut, Check } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { VetcoreLogo } from "@/components/vetcore-logo";
 
 export const metadata: Metadata = {
   title: "Productos",
@@ -30,8 +32,12 @@ function ProductCard({ id, name, oneLiner, features, src, alt, href, ctaLabel }:
       >
         <div className="flex flex-col justify-center">
           <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent font-mono text-lg font-bold text-accent-contrast">
-              {name.slice(0, 1)}
+            <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-accent">
+              {name === "Vetcore" ? (
+                <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+              ) : (
+                <span className="font-mono text-lg font-bold text-accent-contrast">{name.slice(0, 1)}</span>
+              )}
             </span>
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-fg">{name}</h2>
@@ -50,14 +56,12 @@ function ProductCard({ id, name, oneLiner, features, src, alt, href, ctaLabel }:
             ))}
           </ul>
 
-          <a
+          <Link
             href={href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="mt-8 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-accent-contrast shadow-elevation-1 transition-all duration-200 hover:bg-accent-hover hover:shadow-elevation-2 active:translate-y-px"
           >
             {ctaLabel} <ArrowSquareOut size={14} weight="bold" />
-          </a>
+          </Link>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-border shadow-elevation-2">
@@ -95,7 +99,7 @@ export default function ProductosPage() {
           ]}
           src="/placeholders/product-vetcore.svg"
           alt="[PLACEHOLDER: screenshot del sistema Vetcore, clínicas veterinarias]"
-          href="#"
+          href="/productos/vetcore"
           ctaLabel="Visitar Vetcore"
         />
 
@@ -110,7 +114,7 @@ export default function ProductosPage() {
           ]}
           src="/placeholders/product-gymcore.svg"
           alt="[PLACEHOLDER: screenshot del sistema Gymcore, gimnasios y estudios]"
-          href="#"
+          href="/productos/gymcore"
           ctaLabel="Visitar Gymcore"
         />
       </Container>

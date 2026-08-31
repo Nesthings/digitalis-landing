@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Logo } from "@/components/logo";
+import { VetcoreLogo } from "@/components/vetcore-logo";
 
 const navItems = [
   {
@@ -17,12 +18,12 @@ const navItems = [
     children: [
       {
         title: "Vetcore",
-        href: "/productos#vetcore",
+        href: "/productos/vetcore",
         description: "Gestión para clínicas veterinarias",
       },
       {
         title: "Gymcore",
-        href: "/productos#gymcore",
+        href: "/productos/gymcore",
         description: "Software para gimnasios y estudios",
       },
     ],
@@ -32,19 +33,24 @@ const navItems = [
     href: "/servicios",
     children: [
       {
-        title: "Gestionamos tu proyecto",
-        href: "/servicios#gestion",
+        title: "Gestión de proyectos",
+        href: "/servicios/gestion",
         description: "De principio a fin, sin que tengas que preocuparte",
       },
       {
         title: "Consultoría técnica",
-        href: "/servicios#consultoria",
+        href: "/servicios/consultoria",
         description: "DevOps, cloud y automatización",
       },
       {
         title: "Desarrollo a medida",
-        href: "/servicios#desarrollo",
+        href: "/servicios/desarrollo",
         description: "MVPs, integraciones y migraciones",
+      },
+      {
+        title: "Consultoría de ciberseguridad",
+        href: "/servicios/ciberseguridad",
+        description: "Auditorías, hardening y estrategia de seguridad",
       },
     ],
   },
@@ -151,13 +157,17 @@ export function Navbar() {
                   <div className="w-72 rounded-2xl border border-border bg-bg p-2 shadow-elevation-3">
                     {item.children.map((child) => (
                       <Link
-                        key={child.href}
+                        key={child.title}
                         href={child.href}
                         onClick={closeMenus}
                         className="flex items-start gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-bg-subtle"
                       >
-                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-bg-muted text-accent">
-                          <ArrowSquareOut size={15} weight="bold" />
+                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-bg-muted text-accent">
+                          {child.title === "Vetcore" ? (
+                            <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          ) : (
+                            <ArrowSquareOut size={15} weight="bold" />
+                          )}
                         </span>
                         <span>
                           <span className="block text-sm font-medium text-fg">
@@ -250,11 +260,16 @@ export function Navbar() {
                   <div className="ml-3 mt-1 space-y-1 border-l border-border pl-4">
                     {item.children.map((child) => (
                       <Link
-                        key={child.href}
+                        key={child.title}
                         href={child.href}
                         onClick={closeMenus}
-                        className="block rounded-lg px-3 py-2 text-sm text-fg-muted transition-colors hover:text-fg"
+                        className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-fg-muted transition-colors hover:text-fg"
                       >
+                        {child.title === "Vetcore" && (
+                          <span className="relative block h-5 w-5 shrink-0 overflow-hidden rounded-md">
+                            <VetcoreLogo className="h-full w-full object-cover" containerClassName="h-full w-full" />
+                          </span>
+                        )}
                         {child.title}
                       </Link>
                     ))}

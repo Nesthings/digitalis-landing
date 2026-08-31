@@ -4,12 +4,12 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 const clients = [
-  { name: "Helvetia Labs", src: "/placeholders/client-1.svg" },
-  { name: "Vantir", src: "/placeholders/client-2.svg" },
-  { name: "Altoq", src: "/placeholders/client-3.svg" },
+  { name: "Helvetia Tech", src: "/placeholders/client-1.svg" },
+  { name: "Avantir", src: "/placeholders/client-2.svg" },
+  { name: "Delta Alto", src: "/placeholders/client-3.svg" },
   { name: "Proforma", src: "/placeholders/client-4.svg" },
-  { name: "Metronome", src: "/placeholders/client-5.svg" },
-  { name: "Clearbit Health", src: "/placeholders/client-6.svg" },
+  { name: "Metronomical", src: "/placeholders/client-5.svg" },
+  { name: "Clinimed Health", src: "/placeholders/client-6.svg" },
 ];
 
 export function LogoWall() {

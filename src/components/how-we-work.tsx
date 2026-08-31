@@ -1,6 +1,7 @@
 import { Compass, Cpu, Gear, RocketLaunch } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
 
 const steps = [
   {
@@ -8,24 +9,28 @@ const steps = [
     step: "01",
     title: "Descubrimiento",
     description: "Entendemos el problema real antes de escribir una sola línea de código.",
+    bg: "/placeholders/product-vetcore.svg",
   },
   {
     icon: Gear,
     step: "02",
     title: "Diseño y arquitectura",
     description: "Definimos la solución, el stack y los trade-offs técnicos con criterio.",
+    bg: "/placeholders/product-gymcore.svg",
   },
   {
     icon: Cpu,
     step: "03",
     title: "Construcción",
     description: "Desarrollamos en iteraciones cortas, con deploy continuo desde el día uno.",
+    bg: "/placeholders/hero-image.svg",
   },
   {
     icon: RocketLaunch,
     step: "04",
     title: "Operación y mejora",
     description: "Monitoreamos, medimos y evolucionamos el producto con datos.",
+    bg: "/placeholders/cta-background.svg",
   },
 ];
 
@@ -47,18 +52,20 @@ export function HowWeWork() {
         <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <Reveal key={s.step} delay={i * 0.08} className="h-full">
-              <li className="relative h-full rounded-2xl border border-border bg-bg-muted p-6">
-                <span className="absolute right-5 top-5 font-mono text-xs font-medium text-fg-muted">
-                  {s.step}
-                </span>
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                  <s.icon size={20} weight="duotone" />
-                </span>
-                <h3 className="mt-4 text-base font-semibold text-fg">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-fg-secondary">
-                  {s.description}
-                </p>
-              </li>
+              <GlassCard src={s.bg}>
+                <div className="flex h-full flex-col p-6">
+                  <span className="absolute right-5 top-5 font-mono text-xs font-medium text-white/60">
+                    {s.step}
+                  </span>
+                  <GlassIcon>
+                    <s.icon size={20} weight="duotone" />
+                  </GlassIcon>
+                  <h3 className="mt-4 text-base font-semibold text-white">{s.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/80">
+                    {s.description}
+                  </p>
+                </div>
+              </GlassCard>
             </Reveal>
           ))}
         </ol>

@@ -13,34 +13,34 @@ export const metadata: Metadata = {
 
 const cases = [
   {
-    client: "Helvetia Labs",
+    client: "Helvetia Tech",
     industry: "Logística",
     metric: "-92%",
     metricLabel: "tiempo de deploy",
     description:
       "Migración de un pipeline manual a CI/CD completo con despliegues automatizados.",
     src: "/placeholders/case-1.svg",
-    alt: "[PLACEHOLDER: caso de éxito Helvetia Labs - portada]",
+    alt: "[PLACEHOLDER: caso de éxito Helvetia Tech - portada]",
   },
   {
-    client: "Vantir",
+    client: "Avantir",
     industry: "Retail",
     metric: "+38%",
     metricLabel: "conversión del checkout",
     description:
       "Rediseño y reconstrucción del proceso de pago online con integración a ERP.",
     src: "/placeholders/case-2.svg",
-    alt: "[PLACEHOLDER: caso de éxito Vantir - portada]",
+    alt: "[PLACEHOLDER: caso de éxito Avantir - portada]",
   },
   {
-    client: "Altoq",
+    client: "Delta Alto",
     industry: "Fintech",
     metric: "3x",
     metricLabel: "velocidad de desarrollo",
     description:
       "Equipo en retainer que multiplicó la capacidad de entrega del equipo interno.",
     src: "/placeholders/case-3.svg",
-    alt: "[PLACEHOLDER: caso de éxito Altoq - portada]",
+    alt: "[PLACEHOLDER: caso de éxito Delta Alto - portada]",
   },
   {
     client: "Proforma",
@@ -53,24 +53,24 @@ const cases = [
     alt: "[PLACEHOLDER: caso de éxito Proforma - portada]",
   },
   {
-    client: "Metronome",
+    client: "Metronomical",
     industry: "Salud",
     metric: "12",
     metricLabel: "semanas al MVP",
     description:
       "De idea a MVP funcional en producción en tres meses, con early adopters onboard.",
     src: "/placeholders/case-5.svg",
-    alt: "[PLACEHOLDER: caso de éxito Metronome - portada]",
+    alt: "[PLACEHOLDER: caso de éxito Metronomical - portada]",
   },
   {
-    client: "Clearbit Health",
+    client: "Clinimed Health",
     industry: "SaaS",
     metric: "99.9%",
     metricLabel: "uptime sostenido",
     description:
       "Endurecimiento de la infraestructura y observabilidad para un SaaS crítico.",
     src: "/placeholders/case-6.svg",
-    alt: "[PLACEHOLDER: caso de éxito Clearbit Health - portada]",
+    alt: "[PLACEHOLDER: caso de éxito Clinimed Health - portada]",
   },
 ];
 
@@ -79,8 +79,8 @@ export default function CasosPage() {
     <>
       <PageHeader
         eyebrow="Casos de Éxito"
-        title="Resultados concretos, números a la vista"
-        description="Una selección de proyectos donde el impacto se mide: menos costos, más velocidad, mejor operación."
+        title="Donde el impacto se cuenta en números"
+        description="Una selección de proyectos que hablan por sus resultados: menos costos, más velocidad, mejor operación."
       />
 
       <Container className="py-16 md:py-20">

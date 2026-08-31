@@ -1,56 +1,69 @@
 "use client";
 
-import { Check } from "@phosphor-icons/react/dist/ssr";
-import { useState } from "react";
+import { ArrowRight, Check } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 
-const plans = [
+interface Plan {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  cta: string;
+  href: string;
+  featured: boolean;
+  badge?: string;
+}
+
+const plans: Plan[] = [
   {
     name: "Mentoría",
-    priceMonthly: "US$ 1.200",
-    priceAnnual: "US$ 1.000",
+    price: "US$1,000",
     period: "por mes",
-    description: "Para equipos que quieren apoyo técnico puntual sin compromiso de proyecto.",
+    description: "Para equipos que quieren criterio senior sin comprometerse a un proyecto.",
     features: [
-      "Sesiones mensuales de arquitectura",
+      "4 sesiones mensuales de arquitectura (1:1)",
       "Revisión de código e infraestructura",
-      "Acceso a asesoría por chat",
+      "Canal directo de chat, respuesta en menos de 24h",
       "Cancela cuando quieras",
     ],
     cta: "Elegir Mentoría",
+    href: "/precios/mentoria",
     featured: false,
   },
   {
     name: "Proyecto",
-    priceMonthly: "Desde US$ 8.000",
-    priceAnnual: "Desde US$ 8.000",
+    price: "Desde US$12,000",
     period: "por proyecto",
     description: "Para MVPs, integraciones y migraciones con alcance definido.",
     features: [
       "Alcance cerrado con entregas por hitos",
-      "Equipo dedicado durante el proyecto",
-      "DevOps e infraestructura incluidos",
+      "Equipo dedicado: lead engineer + roles según el proyecto",
+      "DevOps e infraestructura incluidos desde el día uno",
       "Soporte 30 días post-lanzamiento",
     ],
     cta: "Cotizar mi proyecto",
+    href: "/precios/proyecto",
     featured: true,
+    badge: "Más elegido",
   },
   {
     name: "Retainer",
-    priceMonthly: "US$ 4.500",
-    priceAnnual: "US$ 3.800",
+    price: "Desde US$5,500",
     period: "por mes",
     description: "Para productos en crecimiento que necesitan evolución continua.",
     features: [
-      "Equipo técnico a disposición",
+      "Equipo técnico especializado a disposición",
       "Roadmap de producto compartido",
       "Deploys y monitoreo constantes",
       "Prioridad en requerimientos",
     ],
     cta: "Armar mi retainer",
+    href: "/precios/retainer",
     featured: false,
   },
 ];
@@ -75,8 +88,6 @@ const faqs = [
 ];
 
 export default function PreciosPage() {
-  const [annual, setAnnual] = useState(true);
-
   return (
     <>
       <PageHeader
@@ -86,43 +97,7 @@ export default function PreciosPage() {
       />
 
       <Container className="py-16 md:py-20">
-        <Reveal>
-          <div className="flex items-center justify-center gap-3">
-            <span
-              className={cn(
-                "text-sm font-medium transition-colors",
-                !annual ? "text-fg" : "text-fg-muted",
-              )}
-            >
-              Mensual
-            </span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={annual}
-              aria-label="Alternar facturación mensual o anual"
-              onClick={() => setAnnual((v) => !v)}
-              className="relative h-7 w-12 rounded-full border border-border-strong bg-bg-subtle transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            >
-              <span
-                className={cn(
-                  "absolute top-0.5 h-5 w-5 rounded-full bg-accent shadow-elevation-1 transition-all duration-200",
-                  annual ? "left-6" : "left-0.5",
-                )}
-              />
-            </button>
-            <span
-              className={cn(
-                "text-sm font-medium transition-colors",
-                annual ? "text-fg" : "text-fg-muted",
-              )}
-            >
-              Anual <span className="ml-1 rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">-15%</span>
-            </span>
-          </div>
-        </Reveal>
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-4 grid gap-6 lg:grid-cols-3">
           {plans.map((plan, i) => (
             <Reveal key={plan.name} delay={i * 0.08} className="h-full">
               <div
@@ -133,9 +108,9 @@ export default function PreciosPage() {
                     : "border-border bg-bg-muted hover:shadow-elevation-2",
                 )}
               >
-                {plan.featured && (
+                {plan.badge && (
                   <span className="absolute -top-3 left-7 rounded-full bg-accent-contrast px-3 py-1 text-xs font-semibold text-accent">
-                    Más elegido
+                    {plan.badge}
                   </span>
                 )}
                 <h2 className="text-lg font-semibold">{plan.name}</h2>
@@ -149,7 +124,7 @@ export default function PreciosPage() {
                 </p>
                 <div className="mt-6">
                   <span className="font-mono text-3xl font-semibold tracking-tight md:text-4xl">
-                    {annual ? plan.priceAnnual : plan.priceMonthly}
+                    {plan.price}
                   </span>
                   <span
                     className={cn(
@@ -175,17 +150,31 @@ export default function PreciosPage() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="/contacto"
-                  className={cn(
-                    "mt-8 inline-flex h-11 items-center justify-center rounded-full text-sm font-medium transition-all duration-200 active:translate-y-px",
-                    plan.featured
-                      ? "bg-accent-contrast text-accent hover:shadow-elevation-2"
-                      : "border border-border-strong bg-bg text-fg hover:bg-bg-subtle",
-                  )}
-                >
-                  {plan.cta}
-                </a>
+                <div className="mt-8 flex flex-col gap-2.5">
+                  <a
+                    href="/contacto"
+                    className={cn(
+                      "inline-flex h-11 items-center justify-center rounded-full text-sm font-medium transition-all duration-200 active:translate-y-px",
+                      plan.featured
+                        ? "bg-accent-contrast text-accent hover:shadow-elevation-2"
+                        : "border border-border-strong bg-bg text-fg hover:bg-bg-subtle",
+                    )}
+                  >
+                    {plan.cta}
+                  </a>
+                  <Link
+                    href={plan.href}
+                    className={cn(
+                      "inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-200 active:translate-y-px",
+                      plan.featured
+                        ? "text-accent-contrast/85 hover:bg-accent-contrast/10 hover:text-accent-contrast"
+                        : "text-accent hover:bg-accent/10",
+                    )}
+                  >
+                    Ver detalle
+                    <ArrowRight size={14} weight="bold" />
+                  </Link>
+                </div>
               </div>
             </Reveal>
           ))}

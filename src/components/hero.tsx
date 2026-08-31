@@ -79,7 +79,7 @@ export function Hero() {
           >
             <div className="overflow-hidden rounded-[1.5rem] border border-border shadow-elevation-3">
               <video
-                className="aspect-video h-full w-full scale-[1.3] object-cover"
+                className="aspect-video h-[120%] w-full scale-[1.3] object-cover"
                 autoPlay
                 muted
                 loop
