@@ -3,10 +3,12 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function PageHeader({
   eyebrow,
+  eyebrowClassName,
   title,
   description,
 }: {
   eyebrow?: string;
+  eyebrowClassName?: string;
   title: string;
   description?: string;
 }) {
@@ -16,7 +18,12 @@ export function PageHeader({
         <Reveal>
           <div className="max-w-3xl">
             {eyebrow && (
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <p
+                className={
+                  "font-mono text-xs uppercase tracking-[0.18em] text-accent" +
+                  (eyebrowClassName ? ` ${eyebrowClassName}` : "")
+                }
+              >
                 {eyebrow}
               </p>
             )}

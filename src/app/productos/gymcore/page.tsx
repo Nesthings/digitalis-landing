@@ -138,6 +138,7 @@ export default function GymcorePage() {
     <>
       <PageHeader
         eyebrow="Productos"
+        eyebrowClassName="text-green-600 dark:text-lime-400"
         title="Gymcore"
         description="Software para gimnasios y estudios de entrenamiento, desarrollado y operado in-house por Digitalis Labs."
       />
@@ -254,7 +255,7 @@ export default function GymcorePage() {
         <Container>
           <Reveal>
             <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-green-600 dark:text-lime-400">
                 Funciones
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg text-balance md:text-4xl">
@@ -292,7 +293,7 @@ export default function GymcorePage() {
         <Container>
           <Reveal>
             <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-green-600 dark:text-lime-400">
                 Cómo funciona
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg text-balance md:text-4xl">
@@ -338,12 +339,12 @@ export default function GymcorePage() {
                 prefix="+"
                 suffix="%"
                 label="menos tiempo en tareas administrativas"
-                className="border-l-2 border-accent pl-4"
+                className="border-l-2 border-green-600 pl-4 text-green-600 dark:border-lime-400 dark:text-lime-400"
               />
               <ul className="mt-10 space-y-3">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-base text-fg">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-600/10 text-green-600 dark:bg-lime-400/10 dark:text-lime-400">
                       <Check size={12} weight="bold" />
                     </span>
                     {b}
@@ -370,7 +371,7 @@ export default function GymcorePage() {
                 socios mes con mes.”
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-bg font-mono text-sm font-semibold text-accent">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-green-600 bg-bg font-mono text-sm font-semibold text-green-600 dark:border-lime-400 dark:text-lime-400">
                   ?
                 </span>
                 <div>

@@ -5,13 +5,21 @@ import {
   CalendarCheck,
   ChartLineUp,
   Check,
+  ClipboardText,
   CloudCheck,
   Gauge,
+  Heartbeat,
+  Keyhole,
   LockKey,
   Package,
   PawPrint,
+  Pulse,
   QrCode,
   Receipt,
+  Scan,
+  Signature,
+  Sliders,
+  SlidersHorizontal,
   Syringe,
   UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
@@ -46,6 +54,8 @@ const features = [
     description:
       "Maneja citas por día o semana, bloquea horarios, y cuando no haya espacio, registra al paciente en la lista de espera. Cuando se libera un hueco, el sistema te guía para ofrecerlo y cerrarlo en segundos. Nada se te escapa.",
     placeholder: "[IMAGEN: navegación en la agenda por día/semana y lista de espera]",
+    video: "/placeholders/vc-agenda.webm",
+    aspect: "900/542",
   },
   {
     icon: QrCode,
@@ -54,22 +64,26 @@ const features = [
     description:
       "Cada paciente con su expediente digital: foto, datos, peso con historial, alergias, alertas y vacunas. Comparte la cartilla con el dueño mediante un QR: ellos la ven desde su celular y tú mantienes el control de todo.",
     placeholder: "[IMAGEN: ficha de la mascota con foto, peso en gráfica y cartilla con QR]",
+    video: "/placeholders/vc-expedientes.webm",
+    aspect: "900/557",
   },
   {
     icon: Receipt,
-    title: "Checkout de consultas: consulta + factura + recibo en un solo paso",
+    title: "Checkout de consultas: consulta + recibo en un solo paso",
     tagline: "Atiende, cobra y entrega el recibo antes de que termine el día",
     description:
-      "Registra la consulta, agrega servicios y productos del catálogo, descuenta stock automáticamente y genera la factura y el recibo PDF en un solo paso. Menos tecleo, más flujo de pacientes, cero papeles.",
+      "Registra la consulta, agrega servicios y productos del catálogo, descuenta stock automáticamente y genera el recibo PDF en un solo paso. Menos tecleo, más flujo de pacientes, cero papeles.",
     placeholder: "[IMAGEN: wizard de nueva consulta con recibo PDF]",
+    video: "/placeholders/vc-checkout.webm",
+    aspect: "900/557",
   },
   {
-    icon: Syringe,
-    title: "Vacunación y carnet al día",
-    tagline: "Que ninguna vacuna se te olvide",
+    icon: Scan,
+    title: "Cartilla digital y check-in con QR",
+    tagline: "Tu paciente conectado, tu recepción más ágil",
     description:
-      "Planes de vacunación estándar por especie, dosis programadas, carnet actualizado y avisos cuando una vacuna vence. Tu equipo y tus pacientes siempre protegidos.",
-    placeholder: "[IMAGEN: plan de vacunación con dosis completadas y recordatorios]",
+      "Comparte la cartilla con los dueños y permiteles ver el historial de su mascota al instante. Al llegar, apunta la webcam al QR de la cartilla y abre el expediente en segundos: sin buscar ni tipear, la historia clínica ya está en pantalla.",
+    placeholder: "[IMAGEN: cartilla del paciente y check-in escaneando el QR con la webcam]",
   },
   {
     icon: Package,
@@ -78,6 +92,8 @@ const features = [
     description:
       "Catálogo de productos y servicios con precios, fotos y stock. Cada venta y consulta descuenta existencias automáticamente y te avisa cuando un producto está por agotarse. Compra justo lo que necesitas, ni más ni menos.",
     placeholder: "[IMAGEN: lista de productos con stock y alerta de reabastecimiento]",
+    video: "/placeholders/vc-insumyprod.webm",
+    aspect: "900/557",
   },
   {
     icon: ChartLineUp,
@@ -102,6 +118,70 @@ const features = [
     description:
       "Admins, veterinarios y recepción con permisos por módulo, multi-sucursal para cadenas y un panel que se adapta a quien lo usa. Escala de una clínica a varias sin cambiar de sistema.",
     placeholder: "[IMAGEN: panel de configuración con roles, sucursales y permisos]",
+  },
+  {
+    icon: ClipboardText,
+    title: "Bitácora y trazabilidad",
+    tagline: "Sabé quién, qué y cuándo se hizo",
+    description:
+      "Registro de auditoría completo de cada acción sobre expedientes, citas, cobros y configuraciones: quién la hizo, qué cambió y cuándo. Transparencia total y control para cumplimiento, sin depender de la memoria del equipo.",
+    placeholder: "[IMAGEN: bitácora de auditoría con historial de cambios]",
+  },
+  {
+    icon: Heartbeat,
+    title: "Modo veterinario",
+    tagline: "Atiende sin perder el foco en el paciente",
+    description:
+      "Una vista enfocada para el consultorio: acceso directo a la ficha del paciente, peso, constantes y notas clínicas en pantalla, sin distracciones ni navegación extra. Todo lo que necesitas en la consulta, a un clic.",
+    placeholder: "[IMAGEN: pantalla del modo veterinario en el consultorio]",
+  },
+  {
+    icon: Pulse,
+    title: "Hospitalización",
+    tagline: "Monitorea en tiempo real a tus pacientes",
+    description:
+      "Seguimiento continuo de los pacientes internados: estado, signos vitales, medicación y notas del equipo en un solo tablero. Alertas cuando algo requiere atención, para que nada se escape durante la internación.",
+    placeholder: "[IMAGEN: tablero de hospitalización con monitoreo en tiempo real]",
+  },
+  {
+    icon: Keyhole,
+    title: "Control de acceso por rol y sucursal",
+    tagline: "Tú decides qué ve cada empleado",
+    description:
+      "Bloquea o permite el acceso de cada miembro del equipo por módulo y por sucursal: no todos deben ver todos los datos. Tú decides qué información queda a disposición de cada rol, con permisos finos y auditables.",
+    placeholder: "[IMAGEN: configuración de permisos por rol y sucursal]",
+  },
+  {
+    icon: Signature,
+    title: "Citas y consentimientos para tus pacientes",
+    tagline: "Cercanía, transparencia y comunicación",
+    description:
+      "Permite a tus pacientes solicitar citas desde su cartilla y firmar los consentimientos que les envíes de los procedimientos que realices. Sabemos que la confianza de tu cliente es lo más importante.",
+    placeholder: "[IMAGEN: solicitud de cita y firma de consentimiento desde la cartilla]",
+  },
+  {
+    icon: Syringe,
+    title: "Planes de vacunación personalizados",
+    tagline: "Crea el plan de vacunación a medida de cada paciente",
+    description:
+      "Diseña tus propios planes de vacunación según especie, edad o condición del paciente. Asigna dosis, intervalos y recordatorios automáticos, y mantén el carnet siempre al día sin depender de plantillas genéricas.",
+    placeholder: "[IMAGEN: creación de un plan de vacunación personalizado]",
+  },
+  {
+    icon: Sliders,
+    title: "Servicios y cobros personalizados",
+    tagline: "Arma tu catálogo, pon precios y automatiza el cobro",
+    description:
+      "Personaliza tus propios servicios: define nombre, precio y duración, conéctalos con los insumos que consumen para descontar stock automáticamente y automatiza los cobros en cada consulta. Tu catálogo, tu regla.",
+    placeholder: "[IMAGEN: configuración de servicios con precios e insumos]",
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Personaliza tu experiencia",
+    tagline: "Tu clínica, tu panel, a tu medida",
+    description:
+      "Ajusta Vetcore a la forma de trabajar de tu equipo: agrega o quita los módulos que uses, ordena las secciones a tu gusto y elige los dashboards que necesites ver. Solo lo que te sirve, sin ruido.",
+    placeholder: "[IMAGEN: personalización de módulos, secciones y dashboards]",
   },
 ];
 
@@ -140,6 +220,7 @@ export default function VetcorePage() {
     <>
       <PageHeader
         eyebrow="Productos"
+        eyebrowClassName="text-emerald-600 dark:text-emerald-400"
         title="Vetcore"
         description="Sistema de gestión para clínicas veterinarias, desarrollado y operado in-house por Digitalis Labs."
       />
@@ -256,7 +337,7 @@ export default function VetcorePage() {
         <Container>
           <Reveal>
             <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
                 Funciones
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg text-balance md:text-4xl">
@@ -267,7 +348,7 @@ export default function VetcorePage() {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {features.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 2) * 0.07} className="h-full">
+              <Reveal key={`${f.title}-${i}`} delay={(i % 2) * 0.07} className="h-full">
                 <GlassCard src="/placeholders/product-vetcore.svg" tone="clinical">
                   <div className="flex h-full flex-col p-6 sm:p-8">
                     <div className="flex items-center gap-3">
@@ -276,7 +357,21 @@ export default function VetcorePage() {
                       </span>
                       <h3 className="text-base font-semibold text-white">{f.title}</h3>
                     </div>
-                    <MediaPlaceholder label={f.placeholder} className="mt-6 border-white/25 bg-white/10 text-white/60" />
+                    {f.video ? (
+                      <div className="mt-6 overflow-hidden rounded-xl border border-white/20 transition-transform duration-300 group-hover:scale-[1.01]">
+                        <video
+                          src={f.video}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="w-full object-cover"
+                          style={{ aspectRatio: f.aspect }}
+                        />
+                      </div>
+                    ) : (
+                      <MediaPlaceholder label={f.placeholder} className="mt-6 border-white/25 bg-white/10 text-white/60" />
+                    )}
                     <p className="mt-6 text-sm font-medium text-white">“{f.tagline}”</p>
                     <p className="mt-2 text-sm leading-relaxed text-white/80">
                       {f.description}
@@ -294,7 +389,7 @@ export default function VetcorePage() {
         <Container>
           <Reveal>
             <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">
                 Cómo funciona
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg text-balance md:text-4xl">
@@ -340,12 +435,12 @@ export default function VetcorePage() {
                 prefix="+"
                 suffix="%"
                 label="menos tiempo en tareas administrativas"
-                className="border-l-2 border-accent pl-4"
+                className="border-l-2 border-emerald-600 pl-4 text-emerald-600 dark:border-emerald-400 dark:text-emerald-400"
               />
               <ul className="mt-10 space-y-3">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-base text-fg">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-600 dark:bg-emerald-400/10 dark:text-emerald-400">
                       <Check size={12} weight="bold" />
                     </span>
                     {b}
@@ -371,7 +466,7 @@ export default function VetcorePage() {
                 agenda y el cobro en un solo paso nos ahorran horas cada semana.”
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-bg font-mono text-sm font-semibold text-accent">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-emerald-600 bg-bg font-mono text-sm font-semibold text-emerald-600 dark:border-emerald-400 dark:text-emerald-400">
                   ?
                 </span>
                 <div>

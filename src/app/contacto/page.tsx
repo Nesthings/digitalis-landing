@@ -147,7 +147,7 @@ export default function ContactoPage() {
                         <Field label="Producto" htmlFor="product" error={errors.product}>
                           <select id="product" name="product" className={inputClasses} defaultValue="">
                             <option value="" disabled>
-                              Seleccioná un producto
+                              Selecciona un producto
                             </option>
                             <option value="vetcore">Vetcore - gestión para clínicas veterinarias</option>
                             <option value="gymcore">Gymcore - software para gimnasios</option>
@@ -169,7 +169,7 @@ export default function ContactoPage() {
                           <Field label="Tipo de proyecto" htmlFor="projectType" error={errors.projectType}>
                             <select id="projectType" name="projectType" className={inputClasses} defaultValue="">
                               <option value="" disabled>
-                                Seleccioná una opción
+                                Selecciona una opción
                               </option>
                               <option value="mvp">MVP</option>
                               <option value="integracion">Integración</option>
@@ -231,10 +231,10 @@ export default function ContactoPage() {
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
                     <CalendarCheck size={18} weight="duotone" />
                   </span>
-                  Preferís hablar directo
+                  Prefieres hablar directo
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-fg-secondary">
-                  Agendá una llamada de 30 minutos. Sin guion, sin presión: solo hablamos de tu
+                  Agenda una llamada de 30 minutos. Sin guion, sin presión: solo hablamos de tu
                   proyecto.
                 </p>
                 <a
