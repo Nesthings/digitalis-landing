@@ -8,8 +8,8 @@ import {
   ClipboardText,
   CloudCheck,
   Gauge,
+  DeviceMobile,
   Heartbeat,
-  Keyhole,
   LockKey,
   Package,
   PawPrint,
@@ -102,6 +102,8 @@ const features = [
     description:
       "Ingresos por servicios y productos, ticket promedio, facturas pagadas y por cobrar, gastos y gráficas de evolución. Mira cómo le va a tu clínica hoy, esta semana o este mes, con un vistazo.",
     placeholder: "[IMAGEN: dashboard de finanzas con ingresos y gráficas]",
+    video: "/placeholders/vc-finanzas.webm",
+    aspect: "900/564",
   },
   {
     icon: BellRinging,
@@ -110,14 +112,18 @@ const features = [
     description:
       "El sistema analiza la operación y genera alertas deterministas: vacunas vencidas, pacientes en seguimiento, cambios de peso y más. Nada importante se queda esperando en un cajón.",
     placeholder: "[IMAGEN: lista de alertas automáticas de la operación]",
+    video: "/placeholders/vc-alert-int.webm",
+    aspect: "900/564",
   },
   {
     icon: UsersThree,
-    title: "Multiusuario, roles y sucursales",
+    title: "Multiusuario, roles, sucursales y accesos",
     tagline: "Todo tu equipo, cada quien con su rol",
     description:
-      "Admins, veterinarios y recepción con permisos por módulo, multi-sucursal para cadenas y un panel que se adapta a quien lo usa. Escala de una clínica a varias sin cambiar de sistema.",
+      "Admins, veterinarios y recepción con permisos por módulo y multi-sucursal para cadenas. Tú decides qué ve cada empleado: bloquea o permite el acceso de cada miembro por módulo y por sucursal, con permisos finos y auditables. Escala de una clínica a varias sin cambiar de sistema.",
     placeholder: "[IMAGEN: panel de configuración con roles, sucursales y permisos]",
+    video: "/placeholders/vc-control-acceso.webm",
+    aspect: "900/564",
   },
   {
     icon: ClipboardText,
@@ -126,6 +132,8 @@ const features = [
     description:
       "Registro de auditoría completo de cada acción sobre expedientes, citas, cobros y configuraciones: quién la hizo, qué cambió y cuándo. Transparencia total y control para cumplimiento, sin depender de la memoria del equipo.",
     placeholder: "[IMAGEN: bitácora de auditoría con historial de cambios]",
+    video: "/placeholders/vc-bitacora.webm",
+    aspect: "900/564",
   },
   {
     icon: Heartbeat,
@@ -142,14 +150,16 @@ const features = [
     description:
       "Seguimiento continuo de los pacientes internados: estado, signos vitales, medicación y notas del equipo en un solo tablero. Alertas cuando algo requiere atención, para que nada se escape durante la internación.",
     placeholder: "[IMAGEN: tablero de hospitalización con monitoreo en tiempo real]",
+    video: "/placeholders/vc-hospitalizacion.webm",
+    aspect: "900/564",
   },
   {
-    icon: Keyhole,
-    title: "Control de acceso por rol y sucursal",
-    tagline: "Tú decides qué ve cada empleado",
+    icon: DeviceMobile,
+    title: "Accede desde PC o tu celular",
+    tagline: "Tu clínica, en cualquier dispositivo",
     description:
-      "Bloquea o permite el acceso de cada miembro del equipo por módulo y por sucursal: no todos deben ver todos los datos. Tú decides qué información queda a disposición de cada rol, con permisos finos y auditables.",
-    placeholder: "[IMAGEN: configuración de permisos por rol y sucursal]",
+      "Trabaja desde la computadora del consultorio o desde tu teléfono móvil: agenda, expedientes, cobros y alertas siempre al alcance. Todo sincronizado en tiempo real, donde estés.",
+    placeholder: "[IMAGEN: Vetcore en PC de escritorio y en celular]",
   },
   {
     icon: Signature,
@@ -166,6 +176,8 @@ const features = [
     description:
       "Diseña tus propios planes de vacunación según especie, edad o condición del paciente. Asigna dosis, intervalos y recordatorios automáticos, y mantén el carnet siempre al día sin depender de plantillas genéricas.",
     placeholder: "[IMAGEN: creación de un plan de vacunación personalizado]",
+    video: "/placeholders/vc-vacunacion.webm",
+    aspect: "900/564",
   },
   {
     icon: Sliders,
@@ -174,6 +186,8 @@ const features = [
     description:
       "Personaliza tus propios servicios: define nombre, precio y duración, conéctalos con los insumos que consumen para descontar stock automáticamente y automatiza los cobros en cada consulta. Tu catálogo, tu regla.",
     placeholder: "[IMAGEN: configuración de servicios con precios e insumos]",
+    video: "/placeholders/vc-servicios.webm",
+    aspect: "900/564",
   },
   {
     icon: SlidersHorizontal,
@@ -182,6 +196,8 @@ const features = [
     description:
       "Ajusta Vetcore a la forma de trabajar de tu equipo: agrega o quita los módulos que uses, ordena las secciones a tu gusto y elige los dashboards que necesites ver. Solo lo que te sirve, sin ruido.",
     placeholder: "[IMAGEN: personalización de módulos, secciones y dashboards]",
+    video: "/placeholders/vc-personaliza.webm",
+    aspect: "900/564",
   },
 ];
 
