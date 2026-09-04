@@ -27,6 +27,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { ProductHero } from "@/components/product-hero";
+import { SequentialVideo } from "@/components/sequential-video";
 import { Container } from "@/components/ui/container";
 import { GlassCard } from "@/components/ui/glass-card";
 import { PageHeader } from "@/components/ui/page-header";
@@ -59,7 +60,7 @@ const features = [
   },
   {
     icon: QrCode,
-    title: "Expedientes digitales con cartilla y QR",
+    title: "Expedientes digitales interactivos",
     tagline: "La historia clínica completa, a un clic",
     description:
       "Cada paciente con su expediente digital: foto, datos, peso con historial, alergias, alertas y vacunas. Comparte la cartilla con el dueño mediante un QR: ellos la ven desde su celular y tú mantienes el control de todo.",
@@ -84,6 +85,10 @@ const features = [
     description:
       "Comparte la cartilla con los dueños y permiteles ver el historial de su mascota al instante. Al llegar, apunta la webcam al QR de la cartilla y abre el expediente en segundos: sin buscar ni tipear, la historia clínica ya está en pantalla.",
     placeholder: "[IMAGEN: cartilla del paciente y check-in escaneando el QR con la webcam]",
+    videos: [
+      { src: "/placeholders/vc-cartilla.webm", aspect: "900/900" },
+      { src: "/placeholders/vc-qr.webm", aspect: "900/488" },
+    ],
   },
   {
     icon: Package,
@@ -142,6 +147,8 @@ const features = [
     description:
       "Una vista enfocada para el consultorio: acceso directo a la ficha del paciente, peso, constantes y notas clínicas en pantalla, sin distracciones ni navegación extra. Todo lo que necesitas en la consulta, a un clic.",
     placeholder: "[IMAGEN: pantalla del modo veterinario en el consultorio]",
+    video: "/placeholders/vc-modo-vet.webm",
+    aspect: "900/900",
   },
   {
     icon: Pulse,
@@ -150,8 +157,8 @@ const features = [
     description:
       "Seguimiento continuo de los pacientes internados: estado, signos vitales, medicación y notas del equipo en un solo tablero. Alertas cuando algo requiere atención, para que nada se escape durante la internación.",
     placeholder: "[IMAGEN: tablero de hospitalización con monitoreo en tiempo real]",
-    video: "/placeholders/vc-hospitalizacion.webm",
-    aspect: "900/564",
+    video: "/placeholders/vc-hospitalizacion-nuevo.webm",
+    aspect: "900/492",
   },
   {
     icon: DeviceMobile,
@@ -160,6 +167,8 @@ const features = [
     description:
       "Trabaja desde la computadora del consultorio o desde tu teléfono móvil: agenda, expedientes, cobros y alertas siempre al alcance. Todo sincronizado en tiempo real, donde estés.",
     placeholder: "[IMAGEN: Vetcore en PC de escritorio y en celular]",
+    video: "/placeholders/vc-accede-pc.webm",
+    aspect: "900/900",
   },
   {
     icon: Signature,
@@ -168,6 +177,11 @@ const features = [
     description:
       "Permite a tus pacientes solicitar citas desde su cartilla y firmar los consentimientos que les envíes de los procedimientos que realices. Sabemos que la confianza de tu cliente es lo más importante.",
     placeholder: "[IMAGEN: solicitud de cita y firma de consentimiento desde la cartilla]",
+    videos: [
+      { src: "/placeholders/vc-consentimiento1.webm", aspect: "900/492" },
+      { src: "/placeholders/vc-consentimiento2.webm", aspect: "900/900" },
+      { src: "/placeholders/vc-consentimiento3.webm", aspect: "900/492" },
+    ],
   },
   {
     icon: Syringe,
@@ -373,7 +387,11 @@ export default function VetcorePage() {
                       </span>
                       <h3 className="text-base font-semibold text-white">{f.title}</h3>
                     </div>
-                    {f.video ? (
+                    {f.videos ? (
+                      <div className="mt-6 overflow-hidden rounded-xl border border-white/20 transition-transform duration-300 group-hover:scale-[1.01]">
+                        <SequentialVideo sources={f.videos} />
+                      </div>
+                    ) : f.video ? (
                       <div className="mt-6 overflow-hidden rounded-xl border border-white/20 transition-transform duration-300 group-hover:scale-[1.01]">
                         <video
                           src={f.video}
