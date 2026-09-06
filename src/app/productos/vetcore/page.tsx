@@ -2,17 +2,17 @@ import {
   ArrowRight,
   BellRinging,
   Building,
+  Buildings,
   CalendarCheck,
   ChartLineUp,
   Check,
   ClipboardText,
   CloudCheck,
-  Gauge,
   DeviceMobile,
+  GitBranch,
   Heartbeat,
   LockKey,
   Package,
-  PawPrint,
   Pulse,
   QrCode,
   Receipt,
@@ -21,6 +21,7 @@ import {
   Sliders,
   SlidersHorizontal,
   Syringe,
+  User,
   UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
@@ -219,22 +220,44 @@ const steps = [
   {
     icon: Building,
     step: "01",
-    title: "Crea tu clínica",
-    description: "Configura tu veterinaria en minutos con un asistente sencillo.",
+    title: "Clínica",
+    description:
+      "Crea tu clínica: ponle nombre, sube su logo y foto, y personaliza la presentación de tu veterinaria.",
   },
   {
-    icon: PawPrint,
+    icon: User,
     step: "02",
-    title: "Registra pacientes y equipo",
+    title: "Administrador",
     description:
-      "Sube tu catálogo, agrega a tu staff y da de alta a tus pacientes con foto y expediente completo.",
+      "Define el administrador que gestiona la cuenta, el equipo y los accesos del sistema.",
   },
   {
-    icon: Gauge,
+    icon: Buildings,
     step: "03",
-    title: "Opera tu día a día",
+    title: "Sucursales",
     description:
-      "Agenda, atiende, cobra y revisa tus números. Todo desde un solo lugar.",
+      "Agrega tus sucursales y organiza qué atiende cada una, desde una sola plataforma.",
+  },
+  {
+    icon: UsersThree,
+    step: "04",
+    title: "Equipo",
+    description:
+      "Registra a veterinarios y recepción con su información, especialidad y contacto.",
+  },
+  {
+    icon: GitBranch,
+    step: "05",
+    title: "Organigrama",
+    description:
+      "Define la estructura del equipo y quién reporta a quién dentro de cada sucursal.",
+  },
+  {
+    icon: LockKey,
+    step: "06",
+    title: "Accesos",
+    description:
+      "Configura roles y permisos por módulo y por sucursal para cada miembro del equipo.",
   },
 ];
 
@@ -427,13 +450,57 @@ export default function VetcorePage() {
                 Cómo funciona
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg text-balance md:text-4xl">
-                De cero a operando en tres pasos
+                De cero a operando en seis pasos
               </h2>
             </div>
           </Reveal>
 
           <Reveal className="mt-12">
-            <MediaPlaceholder label="[IMAGEN: alta de clínica y primer login guiado]" className="mb-12 aspect-[21/9]" />
+            <div className="relative mb-12 overflow-hidden rounded-2xl border border-border">
+              <video
+                src="/videos/configura-clinica.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full object-cover"
+                style={{ aspectRatio: "21/9" }}
+              />
+              <div aria-hidden className="absolute inset-y-0 left-0 w-[5%] overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url(/placeholders/product-vetcore.svg)" }}
+                />
+                <div className="absolute inset-0 bg-emerald-500/45" />
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/50 via-emerald-500/40 to-teal-500/55 dark:from-emerald-900/55 dark:via-emerald-800/40 dark:to-teal-800/45" />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(16,185,129,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.14) 1px, transparent 1px)",
+                    backgroundSize: "32px 32px",
+                  }}
+                />
+                <div className="absolute inset-0 border-r border-white/30 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] backdrop-blur-lg dark:bg-white/[0.02]" />
+              </div>
+              <div aria-hidden className="absolute inset-y-0 right-0 w-[5%] overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url(/placeholders/product-vetcore.svg)" }}
+                />
+                <div className="absolute inset-0 bg-emerald-500/45" />
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/50 via-emerald-500/40 to-teal-500/55 dark:from-emerald-900/55 dark:via-emerald-800/40 dark:to-teal-800/45" />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(16,185,129,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.14) 1px, transparent 1px)",
+                    backgroundSize: "32px 32px",
+                  }}
+                />
+                <div className="absolute inset-0 border-l border-white/30 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] backdrop-blur-lg dark:bg-white/[0.02]" />
+              </div>
+            </div>
           </Reveal>
 
           <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
