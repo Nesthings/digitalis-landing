@@ -5,13 +5,23 @@ import { cn } from "@/lib/utils";
 export function Logo({
   className,
   textClassName,
+  onClick,
 }: {
   className?: string;
   textClassName?: string;
+  onClick?: () => void;
 }) {
+  const handleClick = () => {
+    onClick?.();
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <Link
       href="/"
+      onClick={handleClick}
       className={cn("flex items-center gap-2.5", className)}
       aria-label="Digitalis Labs - inicio"
     >

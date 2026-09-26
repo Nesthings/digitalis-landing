@@ -93,9 +93,26 @@ export function Navbar() {
   }, [scrollY]);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (!mobileOpen) return;
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+    const prev = {
+      position: style.position,
+      top: style.top,
+      width: style.width,
+      overflow: style.overflow,
+    };
+    // Fija el body en la posición actual para evitar el salto/bug al abrir el menú.
+    style.position = "fixed";
+    style.top = `-${scrollY}px`;
+    style.width = "100%";
+    style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "";
+      style.position = prev.position;
+      style.top = prev.top;
+      style.width = prev.width;
+      style.overflow = prev.overflow;
+      window.scrollTo(0, scrollY);
     };
   }, [mobileOpen]);
 
@@ -118,13 +135,13 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-border bg-bg/80 backdrop-blur-xl"
+        scrolled || mobileOpen
+          ? "border-b border-border bg-bg/95 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 md:h-[72px]">
-        <Logo />
+        <Logo onClick={closeMenus} />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegación principal">
           {navItems.map((item) =>
@@ -246,10 +263,10 @@ export function Navbar() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 top-16 z-40 bg-bg lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto overscroll-contain bg-bg lg:hidden"
         >
           <nav
-            className="flex h-full flex-col gap-1 overflow-y-auto px-6 py-8"
+            className="flex min-h-full flex-col gap-1 px-6 py-8"
             aria-label="Navegación móvil"
           >
             {navItems.map((item, i) => (
