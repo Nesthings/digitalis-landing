@@ -55,6 +55,7 @@ export default function ConsultoriaPage() {
         title="Consultoría técnica"
         description="Acompañamos a tu equipo con criterio técnico: modernizamos infraestructura, automatizamos lo repetitivo y dejamos sistemas que tu equipo puede operar."
         tone="amber"
+        backdrop="/placeholders/case-5.svg"
       />
 
       <section className="py-16 md:py-24">

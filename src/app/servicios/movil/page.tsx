@@ -70,6 +70,7 @@ export default function MovilPage() {
         title="Apps móviles a medida"
         description="Aplicaciones nativas y multiplataforma para iOS y Android, pensadas para la experiencia de tus usuarios y el día a día de tu negocio."
         tone="violet"
+        backdrop="/placeholders/case-3.svg"
       />
 
       <section className="py-16 md:py-24">

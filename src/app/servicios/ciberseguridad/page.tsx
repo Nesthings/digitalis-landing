@@ -49,6 +49,7 @@ export default function CiberseguridadPage() {
         title="Consultoría de Ciberseguridad"
         description="Auditorías, hardening y estrategia de seguridad para proteger tu infraestructura y tus datos."
         tone="emerald"
+        backdrop="/placeholders/case-6.svg"
       />
 
       <section className="py-16 md:py-24">

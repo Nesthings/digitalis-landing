@@ -73,20 +73,20 @@ const tones: Record<
 };
 
 export const toneHeaderBg: Record<GlassTone, string> = {
-  blue: "bg-gradient-to-br from-brand-50 via-bg-muted to-brand-100/60 dark:from-brand-950/40 dark:via-bg-muted dark:to-brand-900/20",
-  cyan: "bg-gradient-to-br from-cyan-50 via-bg-muted to-sky-100/60 dark:from-cyan-950/40 dark:via-bg-muted dark:to-sky-900/20",
+  blue: "bg-gradient-to-br from-brand-100/70 via-bg-muted to-brand-50 dark:from-brand-600/30 dark:via-bg-muted dark:to-brand-900/40",
+  cyan: "bg-gradient-to-br from-cyan-100/70 via-bg-muted to-sky-50 dark:from-cyan-500/25 dark:via-bg-muted dark:to-sky-900/40",
   violet:
-    "bg-gradient-to-br from-violet-50 via-bg-muted to-indigo-100/60 dark:from-violet-950/40 dark:via-bg-muted dark:to-indigo-900/20",
+    "bg-gradient-to-br from-violet-100/70 via-bg-muted to-indigo-50 dark:from-violet-500/25 dark:via-bg-muted dark:to-indigo-900/40",
   fuchsia:
-    "bg-gradient-to-br from-fuchsia-50 via-bg-muted to-pink-100/60 dark:from-fuchsia-950/40 dark:via-bg-muted dark:to-pink-900/20",
+    "bg-gradient-to-br from-fuchsia-100/70 via-bg-muted to-pink-50 dark:from-fuchsia-500/25 dark:via-bg-muted dark:to-pink-900/40",
   emerald:
-    "bg-gradient-to-br from-emerald-50 via-bg-muted to-green-100/60 dark:from-emerald-950/40 dark:via-bg-muted dark:to-green-900/20",
+    "bg-gradient-to-br from-emerald-100/70 via-bg-muted to-green-50 dark:from-emerald-500/25 dark:via-bg-muted dark:to-green-900/40",
   amber:
-    "bg-gradient-to-br from-amber-50 via-bg-muted to-orange-100/60 dark:from-amber-950/40 dark:via-bg-muted dark:to-orange-900/20",
+    "bg-gradient-to-br from-amber-100/70 via-bg-muted to-orange-50 dark:from-amber-500/25 dark:via-bg-muted dark:to-orange-900/40",
   clinical:
-    "bg-gradient-to-br from-emerald-50 via-bg-muted to-teal-100/60 dark:from-emerald-950/40 dark:via-bg-muted dark:to-teal-900/20",
+    "bg-gradient-to-br from-emerald-100/70 via-bg-muted to-teal-50 dark:from-emerald-500/25 dark:via-bg-muted dark:to-teal-900/40",
   electric:
-    "bg-gradient-to-br from-green-50 via-bg-muted to-lime-100/60 dark:from-green-950/40 dark:via-bg-muted dark:to-lime-900/20",
+    "bg-gradient-to-br from-green-100/70 via-bg-muted to-lime-50 dark:from-green-500/25 dark:via-bg-muted dark:to-lime-900/40",
 };
 
 interface GlassCardProps {
@@ -98,6 +98,27 @@ interface GlassCardProps {
   children: React.ReactNode;
 }
 
+export function GlassBackdrop({ src, tone = "blue" }: { src?: string; tone?: GlassTone }) {
+  const t = tones[tone];
+  return (
+    <div aria-hidden className="absolute inset-0 -z-10">
+      {src && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt="" className="h-full w-full object-cover" />
+      )}
+      <div className={cn("absolute inset-0", t.base)} />
+      <div className={cn("absolute inset-0 bg-gradient-to-br", t.overlay, t.overlayDark)} />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `linear-gradient(${t.grid} 1px, transparent 1px), linear-gradient(90deg, ${t.grid} 1px, transparent 1px)`,
+          backgroundSize: "32px 32px",
+        }}
+      />
+    </div>
+  );
+}
+
 export function GlassCard({
   src = "/placeholders/hero-image.svg",
   tone = "blue",
@@ -106,8 +127,6 @@ export function GlassCard({
   hover = true,
   children,
 }: GlassCardProps) {
-  const t = tones[tone];
-
   return (
     <div
       className={cn(
@@ -116,26 +135,7 @@ export function GlassCard({
         className,
       )}
     >
-      {/* Imagen/textura detrás (del tamaño de la card) */}
-      <div aria-hidden className="absolute inset-0 -z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt="" className="h-full w-full object-cover" />
-        <div className={cn("absolute inset-0", t.base)} />
-        <div
-          className={cn(
-            "absolute inset-0 bg-gradient-to-br",
-            t.overlay,
-            t.overlayDark,
-          )}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(${t.grid} 1px, transparent 1px), linear-gradient(90deg, ${t.grid} 1px, transparent 1px)`,
-            backgroundSize: "32px 32px",
-          }}
-        />
-      </div>
+      <GlassBackdrop src={src} tone={tone} />
 
       {/* Contenido con efecto glass */}
       <div

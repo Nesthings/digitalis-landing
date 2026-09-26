@@ -26,6 +26,7 @@ export default function GestionPage() {
         title="Gestionamos tu proyecto"
         description="Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación, equipo, desarrollo, despliegue y operación. Tú te ocupas del negocio, nosotros del resto."
         tone="blue"
+        backdrop="/placeholders/case-1.svg"
       />
 
       <section className="py-16 md:py-24">
