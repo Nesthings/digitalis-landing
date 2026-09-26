@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     title: "Digitalis Labs | Software, consultoría y desarrollo a medida",
     description: "SaaS propios, consultoría técnica y desarrollo de software a medida.",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "256x256" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({
