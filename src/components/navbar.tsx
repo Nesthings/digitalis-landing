@@ -39,14 +39,24 @@ const navItems = [
         description: "De principio a fin, sin que tengas que preocuparte",
       },
       {
+        title: "Desarrollo web a medida",
+        href: "/servicios/web",
+        description: "Plataformas, SaaS, portales y e-commerce",
+      },
+      {
+        title: "Apps móviles a medida",
+        href: "/servicios/movil",
+        description: "iOS y Android, nativas o multiplataforma",
+      },
+      {
+        title: "IA y chatbots RAG",
+        href: "/servicios/ia",
+        description: "Asistentes sobre tus datos y automatización con IA",
+      },
+      {
         title: "Consultoría técnica",
         href: "/servicios/consultoria",
         description: "DevOps, cloud y automatización",
-      },
-      {
-        title: "Desarrollo a medida",
-        href: "/servicios/desarrollo",
-        description: "MVPs, integraciones y migraciones",
       },
       {
         title: "Consultoría de ciberseguridad",

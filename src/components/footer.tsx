@@ -29,8 +29,10 @@ export function Footer() {
       heading: "Servicios",
       links: [
         { label: "Gestión de proyectos", href: "/servicios/gestion" },
+        { label: "Desarrollo web", href: "/servicios/web" },
+        { label: "Apps móviles", href: "/servicios/movil" },
+        { label: "IA y chatbots RAG", href: "/servicios/ia" },
         { label: "Consultoría técnica", href: "/servicios/consultoria" },
-        { label: "Desarrollo a medida", href: "/servicios/desarrollo" },
         { label: "Ciberseguridad", href: "/servicios/ciberseguridad" },
       ],
     },

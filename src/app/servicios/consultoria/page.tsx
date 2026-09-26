@@ -1,4 +1,4 @@
-import { ArrowRight, CloudCheckIcon, Code, DatabaseIcon, ShieldCheckIcon, TerminalWindowIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, CloudCheckIcon, Code, DatabaseIcon, Graph, ShieldCheckIcon, TerminalWindowIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
@@ -34,9 +34,9 @@ const areas = [
     description: "Monitoreo, logging y buenas prácticas para que todo sea auditable y estable.",
   },
   {
-    icon: Code,
-    title: "Desarrollo a medida",
-    description: "Cuando la consultoría no alcanza, construimos el software que resuelve tu problema exacto.",
+    icon: Graph,
+    title: "Arquitectura y escalabilidad",
+    description: "Diseñamos sistemas que soportan crecimiento sin reescribir todo a los seis meses.",
   },
 ];
 
@@ -132,11 +132,11 @@ export default function ConsultoriaPage() {
                 <h3 className="mt-4 text-lg font-semibold text-fg">¿Necesitas desarrollo a medida?</h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg-secondary">
                   Si además de modernizar tu infraestructura necesitas construir software nuevo,
-                  lo hacemos de principio a fin: MVPs, integraciones y migraciones.
+                  lo hacemos de principio a fin: web, apps móviles, integraciones e IA.
                 </p>
               </div>
               <Link
-                href="/servicios/desarrollo"
+                href="/servicios/web"
                 className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-accent-contrast shadow-elevation-1 transition-all duration-200 hover:bg-accent-hover hover:shadow-elevation-2 active:translate-y-px"
               >
                 Ver desarrollo a medida

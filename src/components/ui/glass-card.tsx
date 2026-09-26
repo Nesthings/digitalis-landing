@@ -1,6 +1,14 @@
 import { cn } from "@/lib/utils";
 
-type GlassTone = "blue" | "clinical" | "electric" | "cyan" | "violet" | "emerald";
+type GlassTone =
+  | "blue"
+  | "clinical"
+  | "electric"
+  | "cyan"
+  | "violet"
+  | "emerald"
+  | "fuchsia"
+  | "amber";
 
 const tones: Record<
   GlassTone,
@@ -47,6 +55,20 @@ const tones: Record<
     overlayDark:
       "dark:from-emerald-900/55 dark:via-emerald-800/40 dark:to-green-800/45",
     grid: "rgba(16,185,129,0.16)",
+  },
+  fuchsia: {
+    base: "bg-fuchsia-500/45",
+    overlay: "from-fuchsia-600/50 via-fuchsia-500/40 to-pink-400/55",
+    overlayDark:
+      "dark:from-fuchsia-900/55 dark:via-fuchsia-800/40 dark:to-pink-800/45",
+    grid: "rgba(217,70,239,0.14)",
+  },
+  amber: {
+    base: "bg-amber-500/45",
+    overlay: "from-amber-600/50 via-amber-500/40 to-orange-400/55",
+    overlayDark:
+      "dark:from-amber-900/55 dark:via-amber-800/40 dark:to-orange-800/45",
+    grid: "rgba(245,158,11,0.14)",
   },
 };
 

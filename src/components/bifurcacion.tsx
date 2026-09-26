@@ -3,7 +3,9 @@ import {
   Check,
   ClipboardText,
   CloudCheck,
-  CodeIcon,
+  DeviceMobile,
+  Globe,
+  Robot,
   ShieldCheckIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
@@ -26,30 +28,56 @@ const items = [
     imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
   },
   {
-    icon: CloudCheck,
-    title: "Consultoría",
+    icon: Globe,
+    title: "Desarrollo Web a Medida",
     description:
-      "DevOps, cloud y automatización. Acompañamos a tu equipo a modernizar infraestructura sin frenar el negocio.",
-    bullets: ["Cloud y DevOps", "Automatización y observabilidad"],
-    href: "/servicios/consultoria",
-    cta: "Ver consultoría",
+      "Plataformas web, SaaS y portales a medida: rápidos, escalables y listos para crecer con tu negocio.",
+    bullets: ["SaaS y portales", "Rendimiento y SEO"],
+    href: "/servicios/web",
+    cta: "Ver desarrollo web",
     tone: "cyan",
     bg: "/placeholders/case-2.svg",
     img: "/placeholders/client-2.svg",
-    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
+    imgAlt: "[IMAGEN: desarrollo web a medida]",
   },
   {
-    icon: CodeIcon,
-    title: "Desarrollo a Medida",
+    icon: DeviceMobile,
+    title: "Apps Móviles a Medida",
     description:
-      "MVPs, integraciones y migraciones. Construimos software que resuelve tu problema exacto, no otro.",
-    bullets: ["MVPs e integraciones", "Migraciones sin frenar el negocio"],
-    href: "/servicios/desarrollo",
-    cta: "Ver desarrollo a medida",
+      "Aplicaciones nativas y multiplataforma para iOS y Android, pensadas para la experiencia de tus usuarios.",
+    bullets: ["iOS y Android", "Publicación en stores"],
+    href: "/servicios/movil",
+    cta: "Ver apps móviles",
     tone: "violet",
     bg: "/placeholders/case-3.svg",
     img: "/placeholders/client-3.svg",
-    imgAlt: "[IMAGEN: desarrollo de software a medida]",
+    imgAlt: "[IMAGEN: desarrollo de aplicaciones móviles]",
+  },
+  {
+    icon: Robot,
+    title: "IA y Chatbots (RAG)",
+    description:
+      "Chatbots con RAG sobre tus propios datos, asistentes y automatizaciones con modelos de lenguaje.",
+    bullets: ["Chatbots RAG", "Automatización con IA"],
+    href: "/servicios/ia",
+    cta: "Ver soluciones de IA",
+    tone: "fuchsia",
+    bg: "/placeholders/case-4.svg",
+    img: "/placeholders/client-4.svg",
+    imgAlt: "[IMAGEN: chatbots RAG e inteligencia artificial]",
+  },
+  {
+    icon: CloudCheck,
+    title: "Consultoría Técnica",
+    description:
+      "DevOps, cloud y automatización. Modernizamos tu infraestructura sin frenar el negocio.",
+    bullets: ["Cloud y DevOps", "Automatización y observabilidad"],
+    href: "/servicios/consultoria",
+    cta: "Ver consultoría",
+    tone: "amber",
+    bg: "/placeholders/case-5.svg",
+    img: "/placeholders/client-5.svg",
+    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
   },
   {
     icon: ShieldCheckIcon,
@@ -60,8 +88,8 @@ const items = [
     href: "/servicios/ciberseguridad",
     cta: "Ver ciberseguridad",
     tone: "emerald",
-    bg: "/placeholders/case-4.svg",
-    img: "/placeholders/client-4.svg",
+    bg: "/placeholders/case-6.svg",
+    img: "/placeholders/client-6.svg",
     imgAlt: "[IMAGEN: ciberseguridad y hardening]",
   },
 ] as const;
@@ -76,21 +104,22 @@ export function Bifurcacion() {
               Servicios
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-fg text-balance md:text-4xl">
-              Cuatro formas de trabajar con nosotros
+              Todo lo que tu empresa necesita para crecer
             </h2>
             <p className="mt-3 text-lg text-fg-secondary text-pretty">
-              De principio a fin: entender tu problema y resolverlo con la tecnología adecuada.
+              De la estrategia al código: entender tu problema y resolverlo con la tecnología
+              adecuada, de principio a fin.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 md:gap-8">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
           {items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.08} className="h-full">
+            <Reveal key={item.title} delay={(i % 3) * 0.08} className="h-full">
               <GlassCard src={item.bg} tone={item.tone}>
                 <Link
                   href={item.href}
-                  className="group flex h-full flex-1 flex-col p-7 sm:p-8"
+                  className="group flex h-full flex-1 flex-col p-6 sm:p-7"
                 >
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-mono text-xs font-medium text-white/50">
