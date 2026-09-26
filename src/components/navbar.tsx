@@ -132,12 +132,17 @@ export function Navbar() {
       : pathname === href;
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || mobileOpen
-          ? "border-b border-border bg-bg/95 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
+        // OJO: no usar backdrop-blur cuando el menú móvil está abierto: crea un
+        // containing block y rompe el `position: fixed` del overlay del menú.
+        mobileOpen
+          ? "border-b border-border bg-bg"
+          : scrolled
+            ? "border-b border-border bg-bg/80 backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 md:h-[72px]">
@@ -256,8 +261,9 @@ export function Navbar() {
           </button>
         </div>
       </Container>
+    </header>
 
-      {mobileOpen && (
+    {mobileOpen && (
         <motion.div
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -329,6 +335,6 @@ export function Navbar() {
           </nav>
         </motion.div>
       )}
-    </header>
+    </>
   );
 }
