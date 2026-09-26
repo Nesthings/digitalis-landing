@@ -8,7 +8,18 @@ import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
 import { VetcoreLogo } from "@/components/vetcore-logo";
 import { GymcoreLogo } from "@/components/gymcore-logo";
 
-const products = [
+const products: {
+  name: string;
+  oneLiner: string;
+  src: string;
+  video?: string;
+  alt: string;
+  href: string;
+  tone: "clinical" | "electric";
+  bg: string;
+  aspect: string;
+  logo?: boolean;
+}[] = [
   {
     name: "Vetcore",
     oneLiner: "Sistema de gestión para clínicas veterinarias",
@@ -32,7 +43,7 @@ const products = [
     aspect: "4/3",
     logo: true,
   },
-] as const;
+];
 
 export function SaasPreview() {
   const reduce = useReducedMotion();
