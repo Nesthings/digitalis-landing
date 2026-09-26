@@ -22,18 +22,6 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: ClipboardText,
-    title: "Gestión de proyectos",
-    description:
-      "Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación, ejecución y operación.",
-    href: "/servicios/gestion",
-    cta: "Ver gestión de proyectos",
-    tone: "blue",
-    bg: "/placeholders/case-1.svg",
-    img: "/placeholders/client-1.svg",
-    imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
-  },
-  {
     icon: Globe,
     title: "Desarrollo web a medida",
     description:
@@ -44,6 +32,18 @@ const services = [
     bg: "/placeholders/case-2.svg",
     img: "/placeholders/client-2.svg",
     imgAlt: "[IMAGEN: desarrollo web a medida]",
+  },
+  {
+    icon: CloudCheck,
+    title: "Consultoría técnica",
+    description:
+      "DevOps, cloud y automatización. Modernizamos infraestructura sin frenar tu negocio.",
+    href: "/servicios/consultoria",
+    cta: "Ver consultoría",
+    tone: "amber",
+    bg: "/placeholders/case-5.svg",
+    img: "/placeholders/client-5.svg",
+    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
   },
   {
     icon: DeviceMobile,
@@ -70,18 +70,6 @@ const services = [
     imgAlt: "[IMAGEN: chatbots RAG e inteligencia artificial]",
   },
   {
-    icon: CloudCheck,
-    title: "Consultoría técnica",
-    description:
-      "DevOps, cloud y automatización. Modernizamos infraestructura sin frenar tu negocio.",
-    href: "/servicios/consultoria",
-    cta: "Ver consultoría",
-    tone: "amber",
-    bg: "/placeholders/case-5.svg",
-    img: "/placeholders/client-5.svg",
-    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
-  },
-  {
     icon: ShieldCheckIcon,
     title: "Consultoría de ciberseguridad",
     description:
@@ -92,6 +80,18 @@ const services = [
     bg: "/placeholders/case-6.svg",
     img: "/placeholders/client-6.svg",
     imgAlt: "[IMAGEN: ciberseguridad y hardening]",
+  },
+  {
+    icon: ClipboardText,
+    title: "Gestión de proyectos",
+    description:
+      "Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación, ejecución y operación.",
+    href: "/servicios/gestion",
+    cta: "Ver gestión de proyectos",
+    tone: "blue",
+    bg: "/placeholders/case-1.svg",
+    img: "/placeholders/client-1.svg",
+    imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
   },
 ] as const;
 

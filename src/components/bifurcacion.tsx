@@ -15,19 +15,6 @@ import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
 
 const items = [
   {
-    icon: ClipboardText,
-    title: "Gestión de Proyectos",
-    description:
-      "Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación, ejecución y operación.",
-    bullets: ["Un solo responsable", "Reportes periódicos"],
-    href: "/servicios/gestion",
-    cta: "Ver gestión de proyectos",
-    tone: "blue",
-    bg: "/placeholders/case-1.svg",
-    img: "/placeholders/client-1.svg",
-    imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
-  },
-  {
     icon: Globe,
     title: "Desarrollo Web a Medida",
     description:
@@ -39,6 +26,19 @@ const items = [
     bg: "/placeholders/case-2.svg",
     img: "/placeholders/client-2.svg",
     imgAlt: "[IMAGEN: desarrollo web a medida]",
+  },
+  {
+    icon: CloudCheck,
+    title: "Consultoría Técnica",
+    description:
+      "DevOps, cloud y automatización. Modernizamos tu infraestructura sin frenar el negocio.",
+    bullets: ["Cloud y DevOps", "Automatización y observabilidad"],
+    href: "/servicios/consultoria",
+    cta: "Ver consultoría",
+    tone: "amber",
+    bg: "/placeholders/case-5.svg",
+    img: "/placeholders/client-5.svg",
+    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
   },
   {
     icon: DeviceMobile,
@@ -67,19 +67,6 @@ const items = [
     imgAlt: "[IMAGEN: chatbots RAG e inteligencia artificial]",
   },
   {
-    icon: CloudCheck,
-    title: "Consultoría Técnica",
-    description:
-      "DevOps, cloud y automatización. Modernizamos tu infraestructura sin frenar el negocio.",
-    bullets: ["Cloud y DevOps", "Automatización y observabilidad"],
-    href: "/servicios/consultoria",
-    cta: "Ver consultoría",
-    tone: "amber",
-    bg: "/placeholders/case-5.svg",
-    img: "/placeholders/client-5.svg",
-    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
-  },
-  {
     icon: ShieldCheckIcon,
     title: "Consultoría de Ciberseguridad",
     description:
@@ -91,6 +78,19 @@ const items = [
     bg: "/placeholders/case-6.svg",
     img: "/placeholders/client-6.svg",
     imgAlt: "[IMAGEN: ciberseguridad y hardening]",
+  },
+  {
+    icon: ClipboardText,
+    title: "Gestión de Proyectos",
+    description:
+      "Nos hacemos cargo de tu proyecto de principio a fin: definición, planificación, ejecución y operación.",
+    bullets: ["Un solo responsable", "Reportes periódicos"],
+    href: "/servicios/gestion",
+    cta: "Ver gestión de proyectos",
+    tone: "blue",
+    bg: "/placeholders/case-1.svg",
+    img: "/placeholders/client-1.svg",
+    imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
   },
 ] as const;
 
