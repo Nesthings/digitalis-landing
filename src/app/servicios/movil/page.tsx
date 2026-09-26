@@ -12,6 +12,8 @@ import { Container } from "@/components/ui/container";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { toneAccent } from "@/components/ui/glass-card";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Desarrollo de apps móviles a medida",
@@ -62,6 +64,8 @@ const includes = [
   "Publicación, analytics y mantenimiento",
 ];
 
+const accent = toneAccent.violet;
+
 export default function MovilPage() {
   return (
     <>
@@ -78,8 +82,12 @@ export default function MovilPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {types.map((t, i) => (
               <Reveal key={t.title} delay={i * 0.07} className="h-full">
-                <div className="h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:bg-bg hover:shadow-elevation-2">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <div className={cn(
+                  "group h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-bg hover:shadow-elevation-2",
+                  accent.borderHover,
+                  accent.shadowHover,
+                )}>
+                  <span className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accent.bgSoft, accent.text)}>
                     <t.icon size={20} weight="duotone" />
                   </span>
                   <h3 className="mt-4 text-base font-semibold text-fg">{t.title}</h3>
@@ -103,7 +111,7 @@ export default function MovilPage() {
               <ul className="mt-6 space-y-3">
                 {includes.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-fg-secondary">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <span className={cn("mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full", accent.bgSoft, accent.text)}>
                       <Check size={12} weight="bold" />
                     </span>
                     {item}
@@ -114,7 +122,7 @@ export default function MovilPage() {
             <Reveal delay={0.1}>
               <div className="rounded-3xl border border-border bg-bg p-6 sm:p-8">
                 <h3 className="flex items-center gap-2 text-lg font-semibold text-fg">
-                  <Rocket size={20} className="text-accent" aria-hidden="true" />
+                  <Rocket size={20} className={accent.text} aria-hidden="true" />
                   Stack tecnológico
                 </h3>
                 <div className="mt-5 flex flex-wrap gap-2">

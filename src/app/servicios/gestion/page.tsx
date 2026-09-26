@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/container";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { toneAccent } from "@/components/ui/glass-card";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Gestión de proyectos de software",
@@ -17,6 +19,8 @@ const phases = [
   { icon: Code, title: "Ejecución", description: "Desarrollamos en iteraciones cortas con revisiones frecuentes. Siempre sabes cómo va todo." },
   { icon: Flask, title: "Deploy y operación", description: "Lo llevamos a producción, monitoreamos y acompañamos hasta que el sistema es estable." },
 ];
+
+const accent = toneAccent.blue;
 
 export default function GestionPage() {
   return (
@@ -46,8 +50,12 @@ export default function GestionPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {phases.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.07} className="h-full">
-                <div className="h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:bg-bg hover:shadow-elevation-2">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <div className={cn(
+                  "group h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-bg hover:shadow-elevation-2",
+                  accent.borderHover,
+                  accent.shadowHover,
+                )}>
+                  <span className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accent.bgSoft, accent.text)}>
                     <p.icon size={20} weight="duotone" />
                   </span>
                   <h3 className="mt-4 text-base font-semibold text-fg">{p.title}</h3>

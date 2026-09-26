@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/container";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { toneAccent } from "@/components/ui/glass-card";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Consultoría de Ciberseguridad",
@@ -41,6 +43,8 @@ const steps = [
   "Monitoreo y respuesta a incidentes",
 ];
 
+const accent = toneAccent.emerald;
+
 export default function CiberseguridadPage() {
   return (
     <>
@@ -57,8 +61,12 @@ export default function CiberseguridadPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.07} className="h-full">
-                <div className="h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:bg-bg hover:shadow-elevation-2">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <div className={cn(
+                  "group h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-bg hover:shadow-elevation-2",
+                  accent.borderHover,
+                  accent.shadowHover,
+                )}>
+                  <span className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accent.bgSoft, accent.text)}>
                     <s.icon size={20} weight="duotone" />
                   </span>
                   <h3 className="mt-4 text-base font-semibold text-fg">{s.title}</h3>
@@ -86,7 +94,7 @@ export default function CiberseguridadPage() {
               <ol className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
                 {steps.map((step, i) => (
                   <li key={step} className="flex items-start gap-3 text-sm text-fg-secondary">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 font-mono text-[11px] font-semibold text-accent">
+                    <span className={cn("mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full font-mono text-[11px] font-semibold", accent.bgSoft, accent.text)}>
                       {i + 1}
                     </span>
                     {step}
@@ -107,7 +115,7 @@ export default function CiberseguridadPage() {
                   "Acompañamiento continuo post-entrega",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-fg-secondary">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <span className={cn("mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full", accent.bgSoft, accent.text)}>
                       <Check size={12} weight="bold" />
                     </span>
                     {item}

@@ -89,6 +89,69 @@ export const toneHeaderBg: Record<GlassTone, string> = {
     "bg-gradient-to-br from-green-100/70 via-bg-muted to-lime-50 dark:from-green-500/25 dark:via-bg-muted dark:to-lime-900/40",
 };
 
+/** Clases de acento por tono para íconos, checks, bordes y hovers internos. */
+export const toneAccent: Record<
+  GlassTone,
+  { text: string; bgSoft: string; borderHover: string; shadowHover: string; ring: string }
+> = {
+  blue: {
+    text: "text-brand-600 dark:text-brand-400",
+    bgSoft: "bg-brand-600/10 dark:bg-brand-400/10",
+    borderHover: "hover:border-brand-400/60 dark:hover:border-brand-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(46,75,224,0.45)]",
+    ring: "group-hover:ring-brand-400/40",
+  },
+  cyan: {
+    text: "text-cyan-600 dark:text-cyan-400",
+    bgSoft: "bg-cyan-600/10 dark:bg-cyan-400/10",
+    borderHover: "hover:border-cyan-400/60 dark:hover:border-cyan-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(6,182,212,0.45)]",
+    ring: "group-hover:ring-cyan-400/40",
+  },
+  violet: {
+    text: "text-violet-600 dark:text-violet-400",
+    bgSoft: "bg-violet-600/10 dark:bg-violet-400/10",
+    borderHover: "hover:border-violet-400/60 dark:hover:border-violet-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(139,92,246,0.45)]",
+    ring: "group-hover:ring-violet-400/40",
+  },
+  fuchsia: {
+    text: "text-fuchsia-600 dark:text-fuchsia-400",
+    bgSoft: "bg-fuchsia-600/10 dark:bg-fuchsia-400/10",
+    borderHover: "hover:border-fuchsia-400/60 dark:hover:border-fuchsia-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(217,70,239,0.45)]",
+    ring: "group-hover:ring-fuchsia-400/40",
+  },
+  emerald: {
+    text: "text-emerald-600 dark:text-emerald-400",
+    bgSoft: "bg-emerald-600/10 dark:bg-emerald-400/10",
+    borderHover: "hover:border-emerald-400/60 dark:hover:border-emerald-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(16,185,129,0.45)]",
+    ring: "group-hover:ring-emerald-400/40",
+  },
+  amber: {
+    text: "text-amber-600 dark:text-amber-400",
+    bgSoft: "bg-amber-600/10 dark:bg-amber-400/10",
+    borderHover: "hover:border-amber-400/60 dark:hover:border-amber-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(245,158,11,0.45)]",
+    ring: "group-hover:ring-amber-400/40",
+  },
+  clinical: {
+    text: "text-emerald-600 dark:text-emerald-400",
+    bgSoft: "bg-emerald-600/10 dark:bg-emerald-400/10",
+    borderHover: "hover:border-emerald-400/60 dark:hover:border-emerald-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(16,185,129,0.45)]",
+    ring: "group-hover:ring-emerald-400/40",
+  },
+  electric: {
+    text: "text-lime-600 dark:text-lime-400",
+    bgSoft: "bg-lime-600/10 dark:bg-lime-400/10",
+    borderHover: "hover:border-lime-400/60 dark:hover:border-lime-400/40",
+    shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(132,204,22,0.45)]",
+    ring: "group-hover:ring-lime-400/40",
+  },
+};
+
 interface GlassCardProps {
   src?: string;
   tone?: GlassTone;

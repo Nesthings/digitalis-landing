@@ -12,6 +12,8 @@ import { Container } from "@/components/ui/container";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { toneAccent } from "@/components/ui/glass-card";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "IA y chatbots RAG",
@@ -66,6 +68,8 @@ const stack = [
   "Function calling",
 ];
 
+const accent = toneAccent.fuchsia;
+
 export default function IaPage() {
   return (
     <>
@@ -82,8 +86,12 @@ export default function IaPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {solutions.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.07} className="h-full">
-                <div className="h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:bg-bg hover:shadow-elevation-2">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                <div className={cn(
+                  "group h-full rounded-2xl border border-border bg-bg-muted p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-bg hover:shadow-elevation-2",
+                  accent.borderHover,
+                  accent.shadowHover,
+                )}>
+                  <span className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accent.bgSoft, accent.text)}>
                     <s.icon size={20} weight="duotone" />
                   </span>
                   <h3 className="mt-4 text-base font-semibold text-fg">{s.title}</h3>
@@ -118,7 +126,7 @@ export default function IaPage() {
                   <span className="absolute right-5 top-5 font-mono text-xs font-medium text-fg-muted">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                  <span className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accent.bgSoft, accent.text)}>
                     {i === 0 ? (
                       <Database size={20} weight="duotone" />
                     ) : i === 1 ? (
