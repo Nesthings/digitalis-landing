@@ -52,6 +52,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <head>
+        {/* Aplica el tema antes del primer paint para evitar el "flash" claro→oscuro. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);var e=document.documentElement;e.classList.toggle('dark',d);e.style.colorScheme=d?'dark':'light';}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="flex min-h-dvh flex-col bg-bg font-sans text-fg antialiased">
         <ThemeProvider>
           <Navbar />
