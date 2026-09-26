@@ -73,6 +73,7 @@ export default function IaPage() {
         eyebrow="Servicios"
         title="IA y chatbots RAG"
         description="Asistentes inteligentes que responden sobre tus propios datos, automatizan tareas y suman IA a tu producto. Sin inventar, citando la fuente."
+        tone="fuchsia"
       />
 
       <section className="py-16 md:py-24">

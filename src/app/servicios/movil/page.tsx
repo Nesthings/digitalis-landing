@@ -69,6 +69,7 @@ export default function MovilPage() {
         eyebrow="Servicios"
         title="Apps móviles a medida"
         description="Aplicaciones nativas y multiplataforma para iOS y Android, pensadas para la experiencia de tus usuarios y el día a día de tu negocio."
+        tone="violet"
       />
 
       <section className="py-16 md:py-24">

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type GlassTone =
+export type GlassTone =
   | "blue"
   | "clinical"
   | "electric"
@@ -70,6 +70,23 @@ const tones: Record<
       "dark:from-amber-900/55 dark:via-amber-800/40 dark:to-orange-800/45",
     grid: "rgba(245,158,11,0.14)",
   },
+};
+
+export const toneHeaderBg: Record<GlassTone, string> = {
+  blue: "bg-gradient-to-br from-brand-50 via-bg-muted to-brand-100/60 dark:from-brand-950/40 dark:via-bg-muted dark:to-brand-900/20",
+  cyan: "bg-gradient-to-br from-cyan-50 via-bg-muted to-sky-100/60 dark:from-cyan-950/40 dark:via-bg-muted dark:to-sky-900/20",
+  violet:
+    "bg-gradient-to-br from-violet-50 via-bg-muted to-indigo-100/60 dark:from-violet-950/40 dark:via-bg-muted dark:to-indigo-900/20",
+  fuchsia:
+    "bg-gradient-to-br from-fuchsia-50 via-bg-muted to-pink-100/60 dark:from-fuchsia-950/40 dark:via-bg-muted dark:to-pink-900/20",
+  emerald:
+    "bg-gradient-to-br from-emerald-50 via-bg-muted to-green-100/60 dark:from-emerald-950/40 dark:via-bg-muted dark:to-green-900/20",
+  amber:
+    "bg-gradient-to-br from-amber-50 via-bg-muted to-orange-100/60 dark:from-amber-950/40 dark:via-bg-muted dark:to-orange-900/20",
+  clinical:
+    "bg-gradient-to-br from-emerald-50 via-bg-muted to-teal-100/60 dark:from-emerald-950/40 dark:via-bg-muted dark:to-teal-900/20",
+  electric:
+    "bg-gradient-to-br from-green-50 via-bg-muted to-lime-100/60 dark:from-green-950/40 dark:via-bg-muted dark:to-lime-900/20",
 };
 
 interface GlassCardProps {

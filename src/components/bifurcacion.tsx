@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
+import { IconPanel } from "@/components/ui/icon-panel";
 
 const items = [
   {
@@ -24,8 +25,6 @@ const items = [
     cta: "Ver desarrollo web",
     tone: "cyan",
     bg: "/placeholders/case-2.svg",
-    img: "/placeholders/client-2.svg",
-    imgAlt: "[IMAGEN: desarrollo web a medida]",
   },
   {
     icon: CloudCheck,
@@ -37,8 +36,6 @@ const items = [
     cta: "Ver consultoría",
     tone: "amber",
     bg: "/placeholders/case-5.svg",
-    img: "/placeholders/client-5.svg",
-    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
   },
   {
     icon: DeviceMobile,
@@ -50,8 +47,6 @@ const items = [
     cta: "Ver apps móviles",
     tone: "violet",
     bg: "/placeholders/case-3.svg",
-    img: "/placeholders/client-3.svg",
-    imgAlt: "[IMAGEN: desarrollo de aplicaciones móviles]",
   },
   {
     icon: Robot,
@@ -63,8 +58,6 @@ const items = [
     cta: "Ver soluciones de IA",
     tone: "fuchsia",
     bg: "/placeholders/case-4.svg",
-    img: "/placeholders/client-4.svg",
-    imgAlt: "[IMAGEN: chatbots RAG e inteligencia artificial]",
   },
   {
     icon: ShieldCheckIcon,
@@ -76,8 +69,6 @@ const items = [
     cta: "Ver ciberseguridad",
     tone: "emerald",
     bg: "/placeholders/case-6.svg",
-    img: "/placeholders/client-6.svg",
-    imgAlt: "[IMAGEN: ciberseguridad y hardening]",
   },
   {
     icon: ClipboardText,
@@ -89,8 +80,6 @@ const items = [
     cta: "Ver gestión de proyectos",
     tone: "blue",
     bg: "/placeholders/case-1.svg",
-    img: "/placeholders/client-1.svg",
-    imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
   },
 ] as const;
 
@@ -154,15 +143,10 @@ export function Bifurcacion() {
                     ))}
                   </ul>
 
-                  <div className="mt-6 overflow-hidden rounded-2xl border border-white/25 transition-transform duration-300 group-hover:scale-[1.01]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.img}
-                      alt={item.imgAlt}
-                      className="aspect-[16/10] w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
+                  <IconPanel
+                    icon={item.icon}
+                    className="mt-6 transition-transform duration-300 group-hover:scale-[1.01]"
+                  />
 
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-white">
                     {item.cta}

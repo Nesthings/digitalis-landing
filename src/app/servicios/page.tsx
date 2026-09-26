@@ -13,11 +13,12 @@ import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
+import { IconPanel } from "@/components/ui/icon-panel";
 
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Gestión de proyectos, desarrollo web, apps móviles, IA y chatbots RAG, consultoría técnica y ciberseguridad. Seis formas de trabajar con nosotros.",
+    "Desarrollo web, consultoría técnica, apps móviles, IA y chatbots RAG, ciberseguridad y gestión de proyectos. Seis formas de trabajar con nosotros.",
 };
 
 const services = [
@@ -30,8 +31,6 @@ const services = [
     cta: "Ver desarrollo web",
     tone: "cyan",
     bg: "/placeholders/case-2.svg",
-    img: "/placeholders/client-2.svg",
-    imgAlt: "[IMAGEN: desarrollo web a medida]",
   },
   {
     icon: CloudCheck,
@@ -42,8 +41,6 @@ const services = [
     cta: "Ver consultoría",
     tone: "amber",
     bg: "/placeholders/case-5.svg",
-    img: "/placeholders/client-5.svg",
-    imgAlt: "[IMAGEN: consultoría técnica de infraestructura]",
   },
   {
     icon: DeviceMobile,
@@ -54,8 +51,6 @@ const services = [
     cta: "Ver apps móviles",
     tone: "violet",
     bg: "/placeholders/case-3.svg",
-    img: "/placeholders/client-3.svg",
-    imgAlt: "[IMAGEN: desarrollo de aplicaciones móviles]",
   },
   {
     icon: Robot,
@@ -66,8 +61,6 @@ const services = [
     cta: "Ver soluciones de IA",
     tone: "fuchsia",
     bg: "/placeholders/case-4.svg",
-    img: "/placeholders/client-4.svg",
-    imgAlt: "[IMAGEN: chatbots RAG e inteligencia artificial]",
   },
   {
     icon: ShieldCheckIcon,
@@ -78,8 +71,6 @@ const services = [
     cta: "Ver ciberseguridad",
     tone: "emerald",
     bg: "/placeholders/case-6.svg",
-    img: "/placeholders/client-6.svg",
-    imgAlt: "[IMAGEN: ciberseguridad y hardening]",
   },
   {
     icon: ClipboardText,
@@ -90,8 +81,6 @@ const services = [
     cta: "Ver gestión de proyectos",
     tone: "blue",
     bg: "/placeholders/case-1.svg",
-    img: "/placeholders/client-1.svg",
-    imgAlt: "[IMAGEN: gestión de proyectos de principio a fin]",
   },
 ] as const;
 
@@ -132,15 +121,10 @@ export default function ServiciosPage() {
                       </p>
                     </div>
 
-                    <div className="overflow-hidden rounded-2xl border border-white/25 transition-transform duration-300 group-hover:scale-[1.01]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={s.img}
-                        alt={s.imgAlt}
-                        className="aspect-[16/10] w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
+                    <IconPanel
+                      icon={s.icon}
+                      className="transition-transform duration-300 group-hover:scale-[1.01]"
+                    />
 
                     <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
                       {s.cta}

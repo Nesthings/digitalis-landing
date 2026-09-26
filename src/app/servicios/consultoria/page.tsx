@@ -54,6 +54,7 @@ export default function ConsultoriaPage() {
         eyebrow="Servicios"
         title="Consultoría técnica"
         description="Acompañamos a tu equipo con criterio técnico: modernizamos infraestructura, automatizamos lo repetitivo y dejamos sistemas que tu equipo puede operar."
+        tone="amber"
       />
 
       <section className="py-16 md:py-24">

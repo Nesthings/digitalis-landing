@@ -1,19 +1,23 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { toneHeaderBg, type GlassTone } from "@/components/ui/glass-card";
+import { cn } from "@/lib/utils";
 
 export function PageHeader({
   eyebrow,
   eyebrowClassName,
   title,
   description,
+  tone,
 }: {
   eyebrow?: string;
   eyebrowClassName?: string;
   title: string;
   description?: string;
+  tone?: GlassTone;
 }) {
   return (
-    <section className="border-b border-border bg-bg-muted">
+    <section className={cn("border-b border-border bg-bg-muted", tone && toneHeaderBg[tone])}>
       <Container className="pb-14 pt-28 md:pb-20 md:pt-36">
         <Reveal>
           <div className="max-w-3xl">

@@ -48,6 +48,7 @@ export default function CiberseguridadPage() {
         eyebrow="Servicios"
         title="Consultoría de Ciberseguridad"
         description="Auditorías, hardening y estrategia de seguridad para proteger tu infraestructura y tus datos."
+        tone="emerald"
       />
 
       <section className="py-16 md:py-24">

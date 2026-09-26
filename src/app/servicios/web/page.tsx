@@ -69,6 +69,7 @@ export default function WebPage() {
         eyebrow="Servicios"
         title="Desarrollo web a medida"
         description="Plataformas web, SaaS, portales y e-commerce construidos a medida. Rápidos, escalables y pensados para crecer con tu negocio."
+        tone="cyan"
       />
 
       <section className="py-16 md:py-24">
