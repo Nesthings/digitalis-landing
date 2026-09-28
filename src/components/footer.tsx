@@ -1,6 +1,12 @@
 "use client";
 
-import { ArrowRight, GithubLogoIcon, LinkedinLogoIcon, XLogoIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRight,
+  FacebookLogoIcon,
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  WhatsappLogoIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/ui/container";
@@ -46,10 +52,13 @@ export function Footer() {
     },
   ];
 
+  const whatsappHref = "https://wa.me/528446677116";
+
   const socials = [
-    { label: "GitHub", href: "#", icon: GithubLogoIcon },
-    { label: "LinkedIn", href: "#", icon: LinkedinLogoIcon },
-    { label: "X", href: "#", icon: XLogoIcon },
+    { label: "WhatsApp", href: whatsappHref, icon: WhatsappLogoIcon },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/digitalis-labs1/", icon: LinkedinLogoIcon },
+    { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61593126301066", icon: FacebookLogoIcon },
+    { label: "GitHub", href: "https://github.com/Nesthings", icon: GithubLogoIcon },
   ];
 
   return (
@@ -67,6 +76,8 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-fg-muted transition-colors hover:border-border-strong hover:text-fg"
                 >
@@ -143,16 +154,15 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-fg-muted">
-            © {new Date().getFullYear()} [Digitalis Labs]. Todos los derechos reservados.
+            © {new Date().getFullYear()} Digitalis Labs. Todos los derechos reservados.
           </p>
-          <div className="flex gap-6 text-sm text-fg-muted">
-            <Link href="#" className="transition-colors hover:text-fg">
-              Términos
-            </Link>
-            <Link href="#" className="transition-colors hover:text-fg">
-              Privacidad
-            </Link>
-          </div>
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-sm text-fg-muted transition-colors hover:text-fg"
+          >
+            Volver arriba ↑
+          </button>
         </div>
       </Container>
     </footer>

@@ -12,7 +12,7 @@ interface ProductHeroProps {
   features: string[];
   src: string;
   alt: string;
-  siteUrl: string;
+  siteUrl?: string;
   tone?: "blue" | "clinical" | "electric";
   bg?: string;
   srcVideo?: string;
@@ -49,14 +49,16 @@ export function ProductHero({ name, initial, oneLiner, features, src, alt, siteU
                 ))}
               </ul>
 
-              <a
-                href={siteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-brand-600 shadow-elevation-1 transition-all duration-200 hover:bg-white/90 hover:shadow-elevation-2 active:translate-y-px"
-              >
-                Visitar sitio <ArrowSquareOut size={14} weight="bold" />
-              </a>
+              {siteUrl && (
+                <a
+                  href={siteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-medium text-brand-600 shadow-elevation-1 transition-all duration-200 hover:bg-white/90 hover:shadow-elevation-2 active:translate-y-px"
+                >
+                  Visitar sitio <ArrowSquareOut size={14} weight="bold" />
+                </a>
+              )}
             </div>
 
             <div className="overflow-hidden rounded-2xl border border-white/25 shadow-elevation-2">

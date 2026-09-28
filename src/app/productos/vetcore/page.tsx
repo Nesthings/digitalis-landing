@@ -84,7 +84,7 @@ const features = [
     title: "Cartilla digital y check-in con QR",
     tagline: "Tu paciente conectado, tu recepción más ágil",
     description:
-      "Comparte la cartilla con los dueños y permiteles ver el historial de su mascota al instante. Al llegar, apunta la webcam al QR de la cartilla y abre el expediente en segundos: sin buscar ni tipear, la historia clínica ya está en pantalla.",
+      "Comparte la cartilla con los dueños y permíteles ver el historial de su mascota al instante. Al llegar, apunta la webcam al QR de la cartilla y abre el expediente en segundos: sin buscar ni tipear, la historia clínica ya está en pantalla.",
     placeholder: "[IMAGEN: cartilla del paciente y check-in escaneando el QR con la webcam]",
     videos: [
       { src: "/placeholders/vc-cartilla.webm", aspect: "900/900" },
@@ -134,7 +134,7 @@ const features = [
   {
     icon: ClipboardText,
     title: "Bitácora y trazabilidad",
-    tagline: "Sabé quién, qué y cuándo se hizo",
+    tagline: "Sabe quién, qué y cuándo se hizo",
     description:
       "Registro de auditoría completo de cada acción sobre expedientes, citas, cobros y configuraciones: quién la hizo, qué cambió y cuándo. Transparencia total y control para cumplimiento, sin depender de la memoria del equipo.",
     placeholder: "[IMAGEN: bitácora de auditoría con historial de cambios]",
@@ -284,7 +284,6 @@ export default function VetcorePage() {
         features={features.slice(0, 3).map((f) => f.title)}
         src="/placeholders/product-vetcore.svg"
         alt="[PLACEHOLDER: screenshot del sistema Vetcore, clínicas veterinarias]"
-        siteUrl="#"
         tone="clinical"
         bg="/placeholders/product-vetcore.svg"
         srcVideo="/placeholders/vetcore-demo.webm"
@@ -533,7 +532,7 @@ export default function VetcorePage() {
             <Reveal>
               <AnimatedMetric
                 value={40}
-                prefix="+"
+                prefix="-"
                 suffix="%"
                 label="menos tiempo en tareas administrativas"
                 className="border-l-2 border-emerald-600 pl-4 text-emerald-600 dark:border-emerald-400 dark:text-emerald-400"

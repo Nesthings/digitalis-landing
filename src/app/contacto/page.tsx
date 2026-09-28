@@ -1,6 +1,13 @@
 "use client";
 
-import { CalendarCheck, Envelope, PaperPlaneRight } from "@phosphor-icons/react/dist/ssr";
+import {
+  CalendarCheck,
+  Envelope,
+  FacebookLogoIcon,
+  LinkedinLogoIcon,
+  PaperPlaneRight,
+  WhatsappLogoIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
@@ -183,10 +190,10 @@ export default function ContactoPage() {
                               <option value="" disabled>
                                 Rango estimado
                               </option>
-                              <option value="<5">Menos de US$ 5.000</option>
-                              <option value="5-15">US$ 5.000 - 15.000</option>
-                              <option value="15-50">US$ 15.000 - 50.000</option>
-                              <option value="50+">Más de US$ 50.000</option>
+                              <option value="<5">Menos de US$ 5,000</option>
+                              <option value="5-15">US$ 5,000 - 15,000</option>
+                              <option value="15-50">US$ 15,000 - 50,000</option>
+                              <option value="50+">Más de US$ 50,000</option>
                             </select>
                           </Field>
                         </div>
@@ -231,21 +238,18 @@ export default function ContactoPage() {
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
                     <CalendarCheck size={18} weight="duotone" />
                   </span>
-                  Prefieres hablar directo
+                  ¿Prefieres hablar directo?
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-fg-secondary">
                   Agenda una llamada de 30 minutos. Sin guion, sin presión: solo hablamos de tu
                   proyecto.
                 </p>
                 <a
-                  href="#"
+                  href="mailto:hola@digitalislabs.com?subject=Agendar%20una%20llamada"
                   className="mt-4 inline-flex h-10 items-center justify-center rounded-full border border-border-strong bg-bg px-5 text-sm font-medium text-fg transition-colors hover:bg-bg-subtle"
                 >
                   Agendar llamada
                 </a>
-                <p className="mt-3 font-mono text-xs text-fg-muted">
-                  [PLACEHOLDER: embed de Calendly aquí]
-                </p>
               </div>
 
               <div className="rounded-2xl border border-border bg-bg-muted p-6">
@@ -261,9 +265,42 @@ export default function ContactoPage() {
                       hola@digitalislabs.com
                     </a>
                   </li>
-                  <li className="text-fg-muted">[PLACEHOLDER: LinkedIn]</li>
-                  <li className="text-fg-muted">[PLACEHOLDER: X / Twitter]</li>
-                  <li className="text-fg-muted">[PLACEHOLDER: dirección / ciudad]</li>
+                  <li>
+                    <a
+                      href="https://wa.me/528446677116"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-fg-secondary transition-colors hover:text-accent"
+                    >
+                      <WhatsappLogoIcon size={16} weight="fill" />
+                      WhatsApp +52 844 667 7116
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/digitalis-labs1/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-fg-secondary transition-colors hover:text-accent"
+                    >
+                      <LinkedinLogoIcon size={16} weight="fill" />
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61593126301066"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-fg-secondary transition-colors hover:text-accent"
+                    >
+                      <FacebookLogoIcon size={16} weight="fill" />
+                      Facebook
+                    </a>
+                  </li>
+                  <li className="text-fg-muted">
+                    Respondemos en menos de 24 horas hábiles.
+                  </li>
                 </ul>
               </div>
             </div>

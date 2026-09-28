@@ -130,6 +130,8 @@ export default function CiberseguridadPage() {
       <CtaSection
         title="¿Quieres revisar la seguridad de tu infraestructura?"
         description="Cuéntanos qué necesitas proteger. Te respondemos con un plan claro, sin vueltas."
+        tone="emerald"
+        backdrop="/placeholders/case-6.svg"
       />
     </>
   );

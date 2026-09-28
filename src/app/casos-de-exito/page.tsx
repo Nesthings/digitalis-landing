@@ -110,7 +110,7 @@ export default function CasosPage() {
                       <p className="text-xs text-white/70">{c.metricLabel}</p>
                     </div>
                     <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-white">
-                      Ver caso
+                      Hablemos de tu caso
                       <ArrowRight
                         size={14}
                         weight="bold"

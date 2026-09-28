@@ -138,7 +138,9 @@ export default function MovilPage() {
 
       <CtaSection
         title="¿Necesitas una app móvil?"
-        description="Cuéntanos qué querés construir. Te respondemos con un plan claro y un presupuesto cerrado."
+        description="Cuéntanos qué quieres construir. Te respondemos con un plan claro y un presupuesto cerrado."
+        tone="violet"
+        backdrop="/placeholders/case-3.svg"
       />
     </>
   );

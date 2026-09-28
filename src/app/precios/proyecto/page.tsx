@@ -121,7 +121,7 @@ export default function ProyectoPage() {
               <p className="mt-3 text-sm leading-relaxed text-fg-secondary">
                 Proyectos de alcance acotado (ej. integración puntual, MVP simple) con 1-2 roles
                 involucrados a tiempo parcial. Proyectos más grandes (múltiples roles, mayor
-                duración) se cotizan por separado — el "desde" refleja el punto de entrada, no el
+                duración) se cotizan por separado — el «desde» refleja el punto de entrada, no el
                 techo.
               </p>
             </section>

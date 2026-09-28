@@ -154,7 +154,9 @@ export default function WebPage() {
 
       <CtaSection
         title="¿Necesitas una plataforma web?"
-        description="Cuéntanos qué querés construir. Te respondemos con un plan claro y un presupuesto cerrado."
+        description="Cuéntanos qué quieres construir. Te respondemos con un plan claro y un presupuesto cerrado."
+        tone="cyan"
+        backdrop="/placeholders/case-2.svg"
       />
     </>
   );

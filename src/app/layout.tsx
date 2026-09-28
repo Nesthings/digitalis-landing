@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "SaaS propios, consultoría técnica y desarrollo de software a medida.",
     type: "website",
-    locale: "es_AR",
+    locale: "es_MX",
     siteName: "Digitalis Labs",
   },
   twitter: {
@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="es-MX" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         {/* Aplica el tema antes del primer paint para evitar el "flash" claro→oscuro. */}
         <script

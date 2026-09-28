@@ -103,6 +103,8 @@ export default function GestionPage() {
       <CtaSection
         title="¿Tienes un proyecto que gestionar?"
         description="Cuéntanos qué necesitas construir o mejorar. Te respondemos con un plan claro, sin vueltas."
+        tone="blue"
+        backdrop="/placeholders/case-1.svg"
       />
     </>
   );

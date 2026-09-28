@@ -45,7 +45,7 @@ export default function RetainerPage() {
         <div className="mx-auto max-w-3xl">
           <Reveal>
             <p className="text-base leading-relaxed text-fg-secondary md:text-lg">
-              No es "un desarrollador disponible medio tiempo" disfrazado de equipo. El retainer
+              No es «un desarrollador disponible medio tiempo» disfrazado de equipo. El retainer
               te da acceso a un equipo de 5 especialidades (lead, plataforma, producto, DevOps,
               cybersecurity), con horas garantizadas mensuales por rol, para que tu producto siga
               evolucionando sin que tengas que armar un equipo interno.

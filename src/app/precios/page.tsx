@@ -132,12 +132,12 @@ export default function PreciosPage() {
                       ))}
                     </ul>
                     <div className="mt-8 flex flex-col gap-2.5">
-                      <a
+                      <Link
                         href="/contacto"
                         className="inline-flex h-11 items-center justify-center rounded-full bg-white text-sm font-medium text-brand-600 shadow-elevation-1 transition-all duration-200 hover:bg-white/90 hover:shadow-elevation-2 active:translate-y-px"
                       >
                         {plan.cta}
-                      </a>
+                      </Link>
                       <Link
                         href={plan.href}
                         className="inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-medium text-white/85 transition-all duration-200 hover:bg-white/10 hover:text-white active:translate-y-px"
@@ -176,12 +176,12 @@ export default function PreciosPage() {
                     ))}
                   </ul>
                   <div className="mt-8 flex flex-col gap-2.5">
-                    <a
+                    <Link
                       href="/contacto"
                       className="inline-flex h-11 items-center justify-center rounded-full border border-border-strong bg-bg text-sm font-medium text-fg transition-all duration-200 hover:bg-bg-subtle active:translate-y-px"
                     >
                       {plan.cta}
-                    </a>
+                    </Link>
                     <Link
                       href={plan.href}
                       className="inline-flex h-11 items-center justify-center gap-2 rounded-full text-sm font-medium text-accent transition-all duration-200 hover:bg-accent/10 active:translate-y-px"

@@ -160,6 +160,8 @@ export default function ConsultoriaPage() {
       <CtaSection
         title="¿Necesitas modernizar tu infraestructura?"
         description="Cuéntanos qué necesitas mejorar. Te respondemos con un plan claro, sin vueltas."
+        tone="amber"
+        backdrop="/placeholders/case-5.svg"
       />
     </>
   );

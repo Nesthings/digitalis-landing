@@ -44,7 +44,7 @@ const solutions = [
     icon: Sparkle,
     title: "IA en tu producto",
     description:
-      "Sumá búsqueda semántica, recomendaciones o generación de contenido a tu software.",
+      "Agrega búsqueda semántica, recomendaciones o generación de contenido a tu software.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function IaPage() {
       <PageHeader
         eyebrow="Servicios"
         title="IA y chatbots RAG"
-        description="Asistentes inteligentes que responden sobre tus propios datos, automatizan tareas y suman IA a tu producto. Sin inventar, citando la fuente."
+        description="Asistentes inteligentes que responden sobre tus propios datos, automatizan tareas y agregan IA a tu producto. Sin inventar, citando la fuente."
         tone="fuchsia"
         backdrop="/placeholders/case-4.svg"
       />
@@ -161,8 +161,10 @@ export default function IaPage() {
       </section>
 
       <CtaSection
-        title="¿Querés un asistente con IA?"
-        description="Cuéntanos qué datos tenés y qué querés automatizar. Te respondemos con un plan claro, sin vueltas."
+        title="¿Quieres un asistente con IA?"
+        description="Cuéntanos qué datos tienes y qué quieres automatizar. Te respondemos con un plan claro, sin vueltas."
+        tone="fuchsia"
+        backdrop="/placeholders/case-4.svg"
       />
     </>
   );

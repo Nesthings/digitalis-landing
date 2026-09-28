@@ -1,18 +1,51 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { GlassBackdrop, type GlassTone } from "@/components/ui/glass-card";
 
 export function CtaSection({
   title = "¿Tienes un proyecto en mente?",
   description = "Cuéntanos qué necesitas construir o mejorar. Te respondemos con un plan claro, sin vueltas.",
   link = "/contacto",
   linkLabel = "Hablemos de tu proyecto",
+  tone,
+  backdrop,
 }: {
   title?: string;
   description?: string;
   link?: string;
   linkLabel?: string;
+  tone?: GlassTone;
+  backdrop?: string;
 }) {
+  if (tone) {
+    return (
+      <section className="relative isolate overflow-hidden border-t border-border">
+        <GlassBackdrop src={backdrop} tone={tone} />
+        <div className="relative">
+          <Container className="py-20 md:py-24">
+            <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+              <div className="max-w-xl">
+                <h2 className="text-3xl font-semibold tracking-tight text-white text-balance md:text-4xl">
+                  {title}
+                </h2>
+                <p className="mt-3 text-base text-white/85 md:text-lg text-pretty">
+                  {description}
+                </p>
+              </div>
+              <Link
+                href={link}
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-7 text-base font-medium text-gray-900 shadow-elevation-2 transition-all duration-200 hover:bg-white/90 hover:shadow-elevation-3 active:translate-y-px"
+              >
+                {linkLabel} <ArrowRight size={16} weight="bold" />
+              </Link>
+            </div>
+          </Container>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative overflow-hidden bg-accent">
       <div

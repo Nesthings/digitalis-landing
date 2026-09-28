@@ -10,7 +10,7 @@ import { GymcoreLogo } from "@/components/gymcore-logo";
 export const metadata: Metadata = {
   title: "Productos",
   description:
-    "Software desarrollados in-house por Digitalis Labs: VetCore, gestión de clínicas veterinarias y GymCore para gestión d gimnasios.",
+    "Software desarrollado in-house por Digitalis Labs: VetCore, gestión de clínicas veterinarias y GymCore para gestión de gimnasios.",
 };
 
 interface ProductCardProps {

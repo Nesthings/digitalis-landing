@@ -40,7 +40,7 @@ export function AnimatedMetric({
     <div ref={ref} className={className}>
       <div className="font-mono text-4xl font-semibold tracking-tight md:text-5xl">
         {prefix}
-        {(reduce ? value : display).toLocaleString("es-AR")}
+        {(reduce ? value : display).toLocaleString("es-MX")}
         {suffix}
       </div>
       <div className="mt-2 text-sm text-fg-muted">{label}</div>

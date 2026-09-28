@@ -55,12 +55,12 @@ function Video() {
   return (
     <div className="overflow-hidden rounded-[1.5rem] border border-border shadow-elevation-3">
       <video
+        aria-hidden
         className="aspect-video h-[120%] w-full scale-[1.3] object-cover"
         autoPlay
         muted
         loop
         playsInline
-        aria-label="[PLACEHOLDER: animación del producto principal]"
       >
         <source src="/videos/graphic-1.mp4" type="video/mp4" />
         <source src="/videos/graphic-1.webm" type="video/webm" />

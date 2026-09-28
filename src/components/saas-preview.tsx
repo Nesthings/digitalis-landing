@@ -2,6 +2,7 @@
 
 import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import { motion, useReducedMotion } from "motion/react";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
@@ -74,7 +75,7 @@ export function SaasPreview() {
               className="h-full"
             >
               <GlassCard src={product.bg} tone={product.tone}>
-                <a href={product.href} className="group flex h-full flex-1 flex-col p-6 sm:p-8">
+                <Link href={product.href} className="group flex h-full flex-1 flex-col p-6 sm:p-8">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <GlassIcon>
@@ -124,7 +125,7 @@ export function SaasPreview() {
                       />
                     )}
                   </div>
-                </a>
+                </Link>
               </GlassCard>
             </motion.div>
           ))}

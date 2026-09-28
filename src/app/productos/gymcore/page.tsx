@@ -149,7 +149,6 @@ export default function GymcorePage() {
         features={features.slice(0, 3).map((f) => f.title)}
         src="/placeholders/product-gymcore.svg"
         alt="[PLACEHOLDER: screenshot del sistema Gymcore, gimnasios y estudios]"
-        siteUrl="#"
         tone="electric"
         logo="gymcore"
       />
@@ -336,7 +335,7 @@ export default function GymcorePage() {
             <Reveal>
               <AnimatedMetric
                 value={60}
-                prefix="+"
+                prefix="-"
                 suffix="%"
                 label="menos tiempo en tareas administrativas"
                 className="border-l-2 border-green-600 pl-4 text-green-600 dark:border-lime-400 dark:text-lime-400"

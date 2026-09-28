@@ -16,7 +16,7 @@ const metrics = [
   {
     value: 15,
     suffix: "",
-    label: "Clientes activos en 2025",
+    label: "Clientes activos en 2026",
   },
   {
     value: 98,

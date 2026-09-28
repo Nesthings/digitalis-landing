@@ -13,6 +13,18 @@ export const metadata: Metadata = {
 
 const team = [
   {
+    name: "Néstor Quiñones",
+    role: "CEO & Founder",
+    src: "/placeholders/pp.jpg",
+    alt: "[PLACEHOLDER: foto de Néstor Quiñones, CEO & Founder]",
+  },
+  {
+    name: "Jesús Coss",
+    role: "Co-Founder",
+    src: "/placeholders/team-4.svg",
+    alt: "[PLACEHOLDER: foto de Jesús Coss, Co-Founder]",
+  },
+  {
     name: "Agustín Duarte",
     role: "Co-founder · Plataforma",
     src: "/placeholders/team-1.svg",
@@ -29,12 +41,6 @@ const team = [
     role: "Lead Engineer",
     src: "/placeholders/team-3.svg",
     alt: "[PLACEHOLDER: foto de Lucas Romero, Lead Engineer]",
-  },
-  {
-    name: "Néstor Quiñones",
-    role: "DevOps Engineer",
-    src: "/placeholders/pp.jpg",
-    alt: "[PLACEHOLDER: foto de Sofía Paredes, DevOps Engineer]",
   },
 ];
 
