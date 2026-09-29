@@ -6,16 +6,16 @@ import { GlassCard } from "@/components/ui/glass-card";
 const testimonials = [
   {
     quote:
-      "Nos desbloquearon un despliegue que llevábamos meses postergando. Proceso prolijo y total confianza para redoblar la apuesta.",
-    name: "Juan Ramírez",
+      "La verdad, veníamos con un deploy que no sabíamos ni por dónde agarrar. Se metieron a fondo, ordenaron todo y en poco tiempo lo teníamos andando. Un alivio.",
+    name: "Jorge Vázquez M",
     role: "CTO, Helvetia Tech",
     avatar: "/placeholders/avatar-1.svg",
-    alt: "[PLACEHOLDER: foto de perfil de Juan Ramírez]",
+    alt: "[PLACEHOLDER: foto de perfil de Jorge Vázquez M]",
     bg: "/placeholders/client-1.svg",
   },
   {
     quote:
-      "El MVP quedó en producción antes de que termináramos de definir internamente qué queríamos. Impresionante velocidad.",
+      "Teníamos la idea medio suelta y nos ayudaron a bajarla a tierra. El MVP salió antes de lo que esperábamos y con cosas que ni se nos habían ocurrido.",
     name: "Laura Méndez",
     role: "Head of Product, Avantir",
     avatar: "/placeholders/avatar-2.svg",
@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     quote:
-      "Hacen lo que dicen, en el plazo que dicen. La consultoría de cloud nos ahorró costos desde el primer mes.",
+      "Son de esas personas que dicen algo y lo cumplen. Nos ayudaron con la parte de cloud y se notó en la factura desde el primer mes, en serio.",
     name: "Carlos Peralta",
     role: "Director de Operaciones, Proforma",
     avatar: "/placeholders/avatar-3.svg",

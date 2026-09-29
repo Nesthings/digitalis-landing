@@ -20,7 +20,7 @@ export const posts: BlogPost[] = [
     date: "2025-06-18",
     category: "DevOps",
     readTime: "6 min",
-    author: "Agustín Duarte",
+    author: "Jesús Coss",
     src: "/placeholders/blog-1.svg",
     alt: "[PLACEHOLDER: portada del artículo sobre DevOps para equipos chicos]",
     content: [
@@ -38,7 +38,7 @@ export const posts: BlogPost[] = [
     date: "2025-05-02",
     category: "Producto",
     readTime: "8 min",
-    author: "Martina Cáceres",
+    author: "Jesús Coss",
     src: "/placeholders/blog-2.svg",
     alt: "[PLACEHOLDER: portada del artículo sobre lanzar un MVP]",
     content: [
@@ -56,7 +56,7 @@ export const posts: BlogPost[] = [
     date: "2025-03-11",
     category: "Ingeniería",
     readTime: "5 min",
-    author: "Lucas Romero",
+    author: "Jesús Coss",
     src: "/placeholders/blog-3.svg",
     alt: "[PLACEHOLDER: portada del artículo sobre deuda técnica]",
     content: [

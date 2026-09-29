@@ -24,24 +24,6 @@ const team = [
     src: "/placeholders/team-4.svg",
     alt: "[PLACEHOLDER: foto de Jesús Coss, Co-Founder]",
   },
-  {
-    name: "Agustín Duarte",
-    role: "Co-founder · Plataforma",
-    src: "/placeholders/team-1.svg",
-    alt: "[PLACEHOLDER: foto de Agustín Duarte, Co-founder]",
-  },
-  {
-    name: "Martina Cáceres",
-    role: "Co-founder · Producto",
-    src: "/placeholders/team-2.svg",
-    alt: "[PLACEHOLDER: foto de Martina Cáceres, Co-founder]",
-  },
-  {
-    name: "Lucas Romero",
-    role: "Lead Engineer",
-    src: "/placeholders/team-3.svg",
-    alt: "[PLACEHOLDER: foto de Lucas Romero, Lead Engineer]",
-  },
 ];
 
 export default function NosotrosPage() {
