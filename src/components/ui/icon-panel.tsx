@@ -34,10 +34,10 @@ export function IconPanel({
         className={cn("absolute size-32 rounded-full opacity-70 blur-3xl", a.bgSoft)}
       />
       {/* Recuadro del ícono: gira 360° en 3D sobre su eje al pasar el mouse.
-          Vuelve rápido al salir para que no se vea girando al pasar a otra card. */}
+          Al salir no hay animación de retorno (evita el giro brusco de vuelta). */}
       <span
         className={cn(
-          "relative flex size-20 items-center justify-center rounded-2xl border backdrop-blur-md [transform-style:preserve-3d] transition-transform duration-150 ease-in motion-safe:group-hover:duration-700 motion-safe:group-hover:ease-out motion-safe:group-hover:[transform:rotateY(360deg)]",
+          "relative flex size-20 items-center justify-center rounded-2xl border backdrop-blur-md [transform-style:preserve-3d] transition-none motion-safe:group-hover:duration-700 motion-safe:group-hover:ease-out motion-safe:group-hover:transition-transform motion-safe:group-hover:[transform:rotateY(360deg)]",
           a.border,
           a.bgSoft,
         )}
