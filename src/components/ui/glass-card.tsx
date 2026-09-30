@@ -92,11 +92,12 @@ export const toneHeaderBg: Record<GlassTone, string> = {
 /** Clases de acento por tono para íconos, checks, bordes y hovers internos. */
 export const toneAccent: Record<
   GlassTone,
-  { text: string; bgSoft: string; borderHover: string; shadowHover: string; ring: string }
+  { text: string; bgSoft: string; border: string; borderHover: string; shadowHover: string; ring: string }
 > = {
   blue: {
     text: "text-brand-600 dark:text-brand-400",
     bgSoft: "bg-brand-600/10 dark:bg-brand-400/10",
+    border: "border-brand-500/30",
     borderHover: "hover:border-brand-400/60 dark:hover:border-brand-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(46,75,224,0.45)]",
     ring: "group-hover:ring-brand-400/40",
@@ -104,6 +105,7 @@ export const toneAccent: Record<
   cyan: {
     text: "text-cyan-600 dark:text-cyan-400",
     bgSoft: "bg-cyan-600/10 dark:bg-cyan-400/10",
+    border: "border-cyan-500/30",
     borderHover: "hover:border-cyan-400/60 dark:hover:border-cyan-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(6,182,212,0.45)]",
     ring: "group-hover:ring-cyan-400/40",
@@ -111,6 +113,7 @@ export const toneAccent: Record<
   violet: {
     text: "text-violet-600 dark:text-violet-400",
     bgSoft: "bg-violet-600/10 dark:bg-violet-400/10",
+    border: "border-violet-500/30",
     borderHover: "hover:border-violet-400/60 dark:hover:border-violet-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(139,92,246,0.45)]",
     ring: "group-hover:ring-violet-400/40",
@@ -118,6 +121,7 @@ export const toneAccent: Record<
   fuchsia: {
     text: "text-fuchsia-600 dark:text-fuchsia-400",
     bgSoft: "bg-fuchsia-600/10 dark:bg-fuchsia-400/10",
+    border: "border-fuchsia-500/30",
     borderHover: "hover:border-fuchsia-400/60 dark:hover:border-fuchsia-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(217,70,239,0.45)]",
     ring: "group-hover:ring-fuchsia-400/40",
@@ -125,6 +129,7 @@ export const toneAccent: Record<
   emerald: {
     text: "text-emerald-600 dark:text-emerald-400",
     bgSoft: "bg-emerald-600/10 dark:bg-emerald-400/10",
+    border: "border-emerald-500/30",
     borderHover: "hover:border-emerald-400/60 dark:hover:border-emerald-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(16,185,129,0.45)]",
     ring: "group-hover:ring-emerald-400/40",
@@ -132,6 +137,7 @@ export const toneAccent: Record<
   amber: {
     text: "text-amber-600 dark:text-amber-400",
     bgSoft: "bg-amber-600/10 dark:bg-amber-400/10",
+    border: "border-amber-500/30",
     borderHover: "hover:border-amber-400/60 dark:hover:border-amber-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(245,158,11,0.45)]",
     ring: "group-hover:ring-amber-400/40",
@@ -139,6 +145,7 @@ export const toneAccent: Record<
   clinical: {
     text: "text-emerald-600 dark:text-emerald-400",
     bgSoft: "bg-emerald-600/10 dark:bg-emerald-400/10",
+    border: "border-emerald-500/30",
     borderHover: "hover:border-emerald-400/60 dark:hover:border-emerald-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(16,185,129,0.45)]",
     ring: "group-hover:ring-emerald-400/40",
@@ -146,6 +153,7 @@ export const toneAccent: Record<
   electric: {
     text: "text-lime-600 dark:text-lime-400",
     bgSoft: "bg-lime-600/10 dark:bg-lime-400/10",
+    border: "border-lime-500/30",
     borderHover: "hover:border-lime-400/60 dark:hover:border-lime-400/40",
     shadowHover: "hover:shadow-[0_12px_40px_-12px_rgba(132,204,22,0.45)]",
     ring: "group-hover:ring-lime-400/40",
@@ -213,9 +221,23 @@ export function GlassCard({
   );
 }
 
-export function GlassIcon({ children }: { children: React.ReactNode }) {
+export function GlassIcon({
+  children,
+  tone,
+}: {
+  children: React.ReactNode;
+  tone?: GlassTone;
+}) {
+  const t = tone ? toneAccent[tone] : null;
   return (
-    <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/40 bg-white/25 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-lg transition-transform duration-300 ease-out group-hover:-rotate-3 group-hover:scale-110 dark:border-white/15 dark:bg-white/10">
+    <span
+      className={cn(
+        "flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border backdrop-blur-lg transition-transform duration-300",
+        t
+          ? cn(t.bgSoft, t.text, t.border)
+          : "border-white/40 bg-white/25 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:border-white/15 dark:bg-white/10",
+      )}
+    >
       {children}
     </span>
   );

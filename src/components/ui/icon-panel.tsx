@@ -1,12 +1,16 @@
 import { cn } from "@/lib/utils";
+import { toneAccent, type GlassTone } from "@/components/ui/glass-card";
 
 export function IconPanel({
   icon: Icon,
+  tone = "blue",
   className,
 }: {
   icon: React.ElementType;
+  tone?: GlassTone;
   className?: string;
 }) {
+  const a = toneAccent[tone];
   return (
     <div
       className={cn(
@@ -23,17 +27,20 @@ export function IconPanel({
           backgroundSize: "22px 22px",
         }}
       />
-      {/* Halo que aparece al pasar el mouse por la card */}
+      {/* Halos de color del servicio */}
       <div
         aria-hidden
-        className="absolute size-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+        className={cn("absolute size-32 rounded-full opacity-70 blur-3xl", a.bgSoft)}
       />
-      <span className="relative motion-safe:animate-icon-breathe">
-        <Icon
-          size={72}
-          weight="duotone"
-          className="text-white transition-transform duration-500 ease-out group-hover:-rotate-3 group-hover:-translate-y-1 group-hover:scale-110"
-        />
+      {/* Recuadro del ícono con acento de color */}
+      <span
+        className={cn(
+          "relative flex size-20 items-center justify-center rounded-2xl border backdrop-blur-md",
+          a.border,
+          a.bgSoft,
+        )}
+      >
+        <Icon size={44} weight="duotone" className={a.text} />
       </span>
     </div>
   );

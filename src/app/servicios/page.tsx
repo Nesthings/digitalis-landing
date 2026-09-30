@@ -105,7 +105,7 @@ export default function ServiciosPage() {
                   >
                     <div>
                       <div className="flex items-start justify-between gap-4">
-                        <GlassIcon>
+                        <GlassIcon tone={s.tone}>
                           <s.icon size={22} weight="duotone" />
                         </GlassIcon>
                         <ArrowRight
@@ -123,6 +123,7 @@ export default function ServiciosPage() {
 
                     <IconPanel
                       icon={s.icon}
+                      tone={s.tone}
                       className="transition-transform duration-300 group-hover:scale-[1.01]"
                     />
 

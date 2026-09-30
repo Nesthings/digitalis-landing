@@ -121,7 +121,7 @@ export function Bifurcacion() {
                   </div>
 
                   <div className="mt-5">
-                    <GlassIcon>
+                    <GlassIcon tone={item.tone}>
                       <item.icon size={22} weight="duotone" />
                     </GlassIcon>
                     <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
@@ -145,6 +145,7 @@ export function Bifurcacion() {
 
                   <IconPanel
                     icon={item.icon}
+                    tone={item.tone}
                     className="mt-6 transition-transform duration-300 group-hover:scale-[1.01]"
                   />
 
