@@ -215,7 +215,7 @@ export function GlassCard({
 
 export function GlassIcon({ children }: { children: React.ReactNode }) {
   return (
-    <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/40 bg-white/25 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-lg transition-transform duration-300 group-hover:scale-105 dark:border-white/15 dark:bg-white/10">
+    <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-white/40 bg-white/25 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-lg transition-transform duration-300 ease-out group-hover:-rotate-3 group-hover:scale-110 dark:border-white/15 dark:bg-white/10">
       {children}
     </span>
   );

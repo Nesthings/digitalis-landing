@@ -23,7 +23,18 @@ export function IconPanel({
           backgroundSize: "22px 22px",
         }}
       />
-      <Icon size={72} weight="duotone" className="relative text-white" />
+      {/* Halo que aparece al pasar el mouse por la card */}
+      <div
+        aria-hidden
+        className="absolute size-24 rounded-full bg-white/25 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+      />
+      <span className="relative motion-safe:animate-icon-breathe">
+        <Icon
+          size={72}
+          weight="duotone"
+          className="text-white transition-transform duration-500 ease-out group-hover:-rotate-3 group-hover:-translate-y-1 group-hover:scale-110"
+        />
+      </span>
     </div>
   );
 }

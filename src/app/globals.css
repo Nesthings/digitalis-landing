@@ -129,3 +129,18 @@
     text-wrap: pretty;
   }
 }
+
+/* Respiración sutil de los íconos de servicio (loop lento) */
+@keyframes icon-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-icon-breathe {
+  animation: icon-breathe 4.5s ease-in-out infinite;
+}
