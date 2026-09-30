@@ -17,6 +17,7 @@ export function IconPanel({
         "relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/25 bg-white/[0.08]",
         className,
       )}
+      style={{ perspective: "700px" }}
     >
       <div
         aria-hidden
@@ -32,10 +33,10 @@ export function IconPanel({
         aria-hidden
         className={cn("absolute size-32 rounded-full opacity-70 blur-3xl", a.bgSoft)}
       />
-      {/* Recuadro del ícono con acento de color */}
+      {/* Recuadro del ícono: gira 360° en 3D sobre su eje al pasar el mouse */}
       <span
         className={cn(
-          "relative flex size-20 items-center justify-center rounded-2xl border backdrop-blur-md",
+          "relative flex size-20 items-center justify-center rounded-2xl border backdrop-blur-md transition-transform duration-700 ease-out [transform-style:preserve-3d] motion-safe:group-hover:[transform:rotateY(360deg)]",
           a.border,
           a.bgSoft,
         )}
