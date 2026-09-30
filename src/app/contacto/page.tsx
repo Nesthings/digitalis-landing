@@ -2,6 +2,7 @@
 
 import {
   CalendarCheck,
+  Check,
   Envelope,
   FacebookLogoIcon,
   LinkedinLogoIcon,
@@ -107,7 +108,7 @@ export default function ContactoPage() {
                     kind === "demo" ? "bg-accent text-accent-contrast shadow-elevation-1" : "text-fg-secondary hover:text-fg",
                   )}
                 >
-                  Demo de un SaaS
+                  Demo de uno de nuestros software
                 </button>
                 <button
                   type="button"
@@ -160,15 +161,12 @@ export default function ContactoPage() {
                             <option value="gymcore">Gymcore - software para gimnasios</option>
                           </select>
                         </Field>
-                        <Field label="¿Qué quieres ver en la demo?" htmlFor="message">
-                          <textarea
-                            id="message"
-                            name="message"
-                            rows={4}
-                            className="w-full rounded-xl border border-border-strong bg-bg px-3.5 py-3 text-sm text-fg placeholder:text-fg-muted focus:outline-2 focus:outline-offset-2 focus:outline-accent"
-                            placeholder="Cuéntanos brevemente sobre tu clínica o gimnasio"
-                          />
-                        </Field>
+                        <div className="flex items-start gap-2.5 rounded-xl border border-accent/30 bg-accent/5 px-4 py-3 text-sm text-fg-secondary">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                            <Check size={12} weight="bold" />
+                          </span>
+                          Recibirás un enlace único para registrarte y probar nuestro sistema.
+                        </div>
                       </>
                     ) : (
                       <>
