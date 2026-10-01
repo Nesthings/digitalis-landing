@@ -4,10 +4,12 @@ import { toneAccent, type GlassTone } from "@/components/ui/glass-card";
 export function IconPanel({
   icon: Icon,
   tone = "blue",
+  src,
   className,
 }: {
   icon: React.ElementType;
   tone?: GlassTone;
+  src?: string;
   className?: string;
 }) {
   const a = toneAccent[tone];
@@ -19,20 +21,35 @@ export function IconPanel({
       )}
       style={{ perspective: "700px" }}
     >
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.18]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
-      />
-      {/* Halos de color del servicio */}
-      <div
-        aria-hidden
-        className={cn("absolute size-32 rounded-full opacity-70 blur-3xl", a.bgSoft)}
-      />
+      {src ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover opacity-70"
+            loading="lazy"
+          />
+          {/* Velo glass encima de la imagen */}
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+        </>
+      ) : (
+        <>
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-[0.18]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px)",
+              backgroundSize: "22px 22px",
+            }}
+          />
+          <div
+            aria-hidden
+            className={cn("absolute size-32 rounded-full opacity-70 blur-3xl", a.bgSoft)}
+          />
+        </>
+      )}
       {/* Recuadro del ícono: gira 360° en 3D sobre su eje al pasar el mouse.
           Al salir no hay animación de retorno (evita el giro brusco de vuelta). */}
       <span

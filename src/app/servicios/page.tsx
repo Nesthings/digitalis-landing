@@ -132,17 +132,12 @@ export default function ServiciosPage() {
                     </div>
 
                     {s.image ? (
-                      <div className="relative overflow-hidden rounded-2xl border border-white/25 bg-white/[0.08] transition-transform duration-300 group-hover:scale-[1.01]">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={s.image}
-                          alt={`Imagen de ${s.title}`}
-                          className="aspect-[16/10] w-full object-cover opacity-70 backdrop-blur-sm"
-                          loading="lazy"
-                        />
-                        {/* Velo glass encima de la imagen */}
-                        <div className="pointer-events-none absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
-                      </div>
+                      <IconPanel
+                        icon={s.icon}
+                        tone={s.tone}
+                        src={s.image}
+                        className="transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
                     ) : (
                       <IconPanel
                         icon={s.icon}

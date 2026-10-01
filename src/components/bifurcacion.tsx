@@ -14,7 +14,17 @@ import { Reveal } from "@/components/ui/reveal";
 import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
 import { IconPanel } from "@/components/ui/icon-panel";
 
-const items = [
+const items: {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  bullets: string[];
+  href: string;
+  cta: string;
+  tone: "blue" | "cyan" | "violet" | "fuchsia" | "emerald" | "amber";
+  bg: string;
+  image?: string;
+}[] = [
   {
     icon: Globe,
     title: "Desarrollo Web a Medida",
@@ -25,6 +35,7 @@ const items = [
     cta: "Ver desarrollo web",
     tone: "cyan",
     bg: "/placeholders/case-2.svg",
+    image: "/desarrollo-web.jpg",
   },
   {
     icon: CloudCheck,
@@ -81,7 +92,7 @@ const items = [
     tone: "blue",
     bg: "/placeholders/case-1.svg",
   },
-] as const;
+];
 
 export function Bifurcacion() {
   return (
@@ -146,6 +157,7 @@ export function Bifurcacion() {
                   <IconPanel
                     icon={item.icon}
                     tone={item.tone}
+                    src={item.image}
                     className="mt-6 transition-transform duration-300 group-hover:scale-[1.01]"
                   />
 
