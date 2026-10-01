@@ -51,6 +51,7 @@ const services: {
     cta: "Ver consultoría",
     tone: "amber",
     bg: "/placeholders/case-5.svg",
+    image: "/consultoria-tecnica.png",
   },
   {
     icon: DeviceMobile,
@@ -61,6 +62,7 @@ const services: {
     cta: "Ver apps móviles",
     tone: "violet",
     bg: "/placeholders/case-3.svg",
+    image: "/apps-moviles.png",
   },
   {
     icon: Robot,
@@ -71,6 +73,7 @@ const services: {
     cta: "Ver soluciones de IA",
     tone: "fuchsia",
     bg: "/placeholders/case-4.svg",
+    image: "/ia-chatbots.png",
   },
   {
     icon: ShieldCheckIcon,
