@@ -134,7 +134,7 @@ export function Bifurcacion() {
                     />
                   </div>
 
-                  <div className="mt-5">
+                  <div className="mt-5 flex-1">
                     <GlassIcon tone={item.tone}>
                       <item.icon size={22} weight="duotone" />
                     </GlassIcon>
@@ -144,18 +144,18 @@ export function Bifurcacion() {
                     <p className="mt-2 text-sm leading-relaxed text-white/80">
                       {item.description}
                     </p>
-                  </div>
 
-                  <ul className="mt-5 space-y-2">
-                    {item.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2.5 text-sm text-white/90">
-                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
-                          <Check size={12} weight="bold" />
-                        </span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="mt-5 space-y-2">
+                      {item.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2.5 text-sm text-white/90">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                            <Check size={12} weight="bold" />
+                          </span>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
                   <IconPanel
                     icon={item.icon}
