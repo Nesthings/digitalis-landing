@@ -12,7 +12,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
-import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
+import { GlassCard } from "@/components/ui/glass-card";
 import { IconPanel } from "@/components/ui/icon-panel";
 
 export const metadata: Metadata = {
@@ -118,15 +118,12 @@ export default function ServiciosPage() {
                   >
                     <div>
                       <div className="flex items-start justify-between gap-4">
-                        <GlassIcon tone={s.tone}>
-                          <s.icon size={22} weight="duotone" />
-                        </GlassIcon>
                         <ArrowRight
                           size={20}
                           className="mt-1 text-white/70 transition-colors group-hover:text-white"
                         />
                       </div>
-                      <h3 className="mt-6 text-xl font-semibold tracking-tight text-white">
+                      <h3 className="mt-2 text-xl font-semibold tracking-tight text-white">
                         {s.title}
                       </h3>
                       <p className="mt-3 text-sm leading-relaxed text-white/80">

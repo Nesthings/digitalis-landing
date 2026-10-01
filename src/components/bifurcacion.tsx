@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { GlassCard, GlassIcon } from "@/components/ui/glass-card";
+import { GlassCard } from "@/components/ui/glass-card";
 import { IconPanel } from "@/components/ui/icon-panel";
 
 const items: {
@@ -135,10 +135,7 @@ export function Bifurcacion() {
                   </div>
 
                   <div className="mt-5 flex-1">
-                    <GlassIcon tone={item.tone}>
-                      <item.icon size={22} weight="duotone" />
-                    </GlassIcon>
-                    <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
+                    <h3 className="text-xl font-semibold tracking-tight text-white">
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/80">
