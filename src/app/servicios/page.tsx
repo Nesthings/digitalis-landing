@@ -21,7 +21,16 @@ export const metadata: Metadata = {
     "Desarrollo web, consultoría técnica, apps móviles, IA y chatbots RAG, ciberseguridad y gestión de proyectos. Seis formas de trabajar con nosotros.",
 };
 
-const services = [
+const services: {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  href: string;
+  cta: string;
+  tone: "blue" | "cyan" | "violet" | "fuchsia" | "emerald" | "amber";
+  bg: string;
+  image?: string;
+}[] = [
   {
     icon: Globe,
     title: "Desarrollo web a medida",
@@ -31,6 +40,7 @@ const services = [
     cta: "Ver desarrollo web",
     tone: "cyan",
     bg: "/placeholders/case-2.svg",
+    image: "/desarrollo-web.jpg",
   },
   {
     icon: CloudCheck,
@@ -82,7 +92,7 @@ const services = [
     tone: "blue",
     bg: "/placeholders/case-1.svg",
   },
-] as const;
+];
 
 export default function ServiciosPage() {
   return (
@@ -121,11 +131,25 @@ export default function ServiciosPage() {
                       </p>
                     </div>
 
-                    <IconPanel
-                      icon={s.icon}
-                      tone={s.tone}
-                      className="transition-transform duration-300 group-hover:scale-[1.01]"
-                    />
+                    {s.image ? (
+                      <div className="relative overflow-hidden rounded-2xl border border-white/25 bg-white/[0.08] transition-transform duration-300 group-hover:scale-[1.01]">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={s.image}
+                          alt={`Imagen de ${s.title}`}
+                          className="aspect-[16/10] w-full object-cover opacity-70 backdrop-blur-sm"
+                          loading="lazy"
+                        />
+                        {/* Velo glass encima de la imagen */}
+                        <div className="pointer-events-none absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+                      </div>
+                    ) : (
+                      <IconPanel
+                        icon={s.icon}
+                        tone={s.tone}
+                        className="transition-transform duration-300 group-hover:scale-[1.01]"
+                      />
+                    )}
 
                     <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
                       {s.cta}
