@@ -84,6 +84,7 @@ const services: {
     cta: "Ver ciberseguridad",
     tone: "emerald",
     bg: "/placeholders/case-6.svg",
+    image: "/ciberseguridad.png",
   },
   {
     icon: ClipboardText,
@@ -94,6 +95,7 @@ const services: {
     cta: "Ver gestión de proyectos",
     tone: "blue",
     bg: "/placeholders/case-1.svg",
+    image: "/gestion-proyectos.jpg",
   },
 ];
 
