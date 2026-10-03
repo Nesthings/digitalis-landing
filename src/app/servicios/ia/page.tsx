@@ -12,6 +12,7 @@ import { Container } from "@/components/ui/container";
 import { CtaSection } from "@/components/ui/cta-section";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { RagFlow } from "@/components/ui/rag-flow";
 import { toneAccent } from "@/components/ui/glass-card";
 import { cn } from "@/lib/utils";
 
@@ -117,6 +118,10 @@ export default function IaPage() {
                 modelo de lenguaje: la respuesta se basa en tu información, no en suposiciones.
               </p>
             </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <RagFlow className="mt-8" />
           </Reveal>
 
           <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
