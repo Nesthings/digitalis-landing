@@ -1,9 +1,11 @@
 import {
   Brain,
-  Database,
+  Headset,
+  Lifebuoy,
   Lightning,
-  MagnifyingGlass,
   Robot,
+  Scales,
+  ShoppingCart,
   Sparkle,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
@@ -49,11 +51,31 @@ const solutions = [
   },
 ];
 
-const steps = [
-  "Conectamos tus datos (documentos, bases, APIs)",
-  "Indexamos con embeddings y búsqueda semántica",
-  "El asistente recupera el contexto relevante (RAG)",
-  "Genera la respuesta y cita la fuente",
+const useCases = [
+  {
+    icon: Headset,
+    title: "Atención al cliente 24/7",
+    description:
+      "Responde dudas de productos, pedidos y políticas citando tu documentación real, sin inventar.",
+  },
+  {
+    icon: Lifebuoy,
+    title: "Soporte técnico interno",
+    description:
+      "Tu equipo encuentra respuestas en manuales, procedimientos y bases de conocimiento al instante.",
+  },
+  {
+    icon: Scales,
+    title: "Consulta de documentación",
+    description:
+      "Pregunta en lenguaje natural sobre contratos, normativas o expedientes y recibe la fuente exacta.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Asistente de ventas",
+    description:
+      "Guía al cliente por tu catálogo, compara opciones y recomienda el producto adecuado.",
+  },
 ];
 
 const stack = [
@@ -123,30 +145,42 @@ export default function IaPage() {
           <Reveal delay={0.1}>
             <RagFlow className="mt-8" />
           </Reveal>
+        </Container>
+      </section>
 
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, i) => (
-              <Reveal key={step} delay={i * 0.07} className="h-full">
-                <li className="relative h-full rounded-2xl border border-border bg-bg p-6">
-                  <span className="absolute right-5 top-5 font-mono text-xs font-medium text-fg-muted">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+      <section className="py-16 md:py-24">
+        <Container>
+          <Reveal>
+            <div className="max-w-2xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-fg md:text-3xl">
+                Usos de los chatbots RAG
+              </h2>
+              <p className="mt-3 text-lg text-fg-secondary text-pretty">
+                El mismo motor RAG resuelve casos muy distintos: siempre sobre tus datos,
+                citando la fuente y con el tono de tu marca.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {useCases.map((useCase, i) => (
+              <Reveal key={useCase.title} delay={i * 0.07} className="h-full">
+                <div className={cn(
+                  "group h-full rounded-2xl border border-border bg-bg p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-bg-muted hover:shadow-elevation-2",
+                  accent.borderHover,
+                  accent.shadowHover,
+                )}>
                   <span className={cn("flex h-10 w-10 items-center justify-center rounded-xl", accent.bgSoft, accent.text)}>
-                    {i === 0 ? (
-                      <Database size={20} weight="duotone" />
-                    ) : i === 1 ? (
-                      <MagnifyingGlass size={20} weight="duotone" />
-                    ) : i === 2 ? (
-                      <Brain size={20} weight="duotone" />
-                    ) : (
-                      <Sparkle size={20} weight="duotone" />
-                    )}
+                    <useCase.icon size={20} weight="duotone" />
                   </span>
-                  <p className="mt-4 text-sm leading-relaxed text-fg-secondary">{step}</p>
-                </li>
+                  <h3 className="mt-4 text-base font-semibold text-fg">{useCase.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-fg-secondary">
+                    {useCase.description}
+                  </p>
+                </div>
               </Reveal>
             ))}
-          </ol>
+          </div>
         </Container>
       </section>
 
